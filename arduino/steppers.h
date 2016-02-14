@@ -1,7 +1,8 @@
 #ifndef __STEPPERS_H
 #define __STEPPERS_H
 
-#include "TimerOne.h"
+#include <TimerOne.h>
+#include <TimerThree.h>
 
 #define STEPPING 4
 #define STEPS_REV 200*STEPPING
@@ -12,19 +13,19 @@
 //    Stepper Motor Pins
 //    Remember to tie SLEEP to 5v
 
-#define STEPPER_LEFT_DIR    2
-#define STEPPER_LEFT_MS1    3
-#define STEPPER_LEFT_MS2    4
-#define STEPPER_LEFT_ENABLE 5
+#define STEPPER_LEFT_DIR    23
+#define STEPPER_LEFT_MS1    25
+#define STEPPER_LEFT_MS2    27
+#define STEPPER_LEFT_ENABLE 29
 
  
-#define STEPPER_RIGHT_DIR    6
-#define STEPPER_RIGHT_MS1    7
-#define STEPPER_RIGHT_MS2    8
-#define STEPPER_RIGHT_ENABLE 11
+#define STEPPER_RIGHT_DIR    47
+#define STEPPER_RIGHT_MS1    49
+#define STEPPER_RIGHT_MS2    51
+#define STEPPER_RIGHT_ENABLE 53
 
-#define STEPPER_LEFT_STEP   10
-#define STEPPER_RIGHT_STEP   9 
+#define STEPPER_LEFT_STEP   13
+#define STEPPER_RIGHT_STEP   2 
 
 volatile unsigned long leftSpeed = 0; //global vars for speed control, checked by the interrupt every 1 mS. in uS/step
 volatile unsigned long rightSpeed = 0;
@@ -33,27 +34,32 @@ volatile char leftDir = 0;
 
 volatile unsigned int stepDelay = 0;
 
-void updateMotors()
+void updateLeftMotor()
 {
   if(leftSpeed == 0)
-    //Timer1.pwm(STEPPER_LEFT_STEP, 0, leftSpeed);
-    Timer1.disablePwm(STEPPER_LEFT_STEP);
+    Timer1.pwm(STEPPER_LEFT_STEP, 0, leftSpeed);
+    //Timer1.disablePwm(STEPPER_LEFT_STEP);
   else
     Timer1.pwm(STEPPER_LEFT_STEP, DUTY_CYCLE, leftSpeed);
-    
+}
+
+void updateRightMotor()
+{
   if(rightSpeed == 0)
-    //Timer1.pwm(STEPPER_RIGHT_STEP, 0, rightSpeed);
-    Timer1.disablePwm(STEPPER_RIGHT_STEP);
+    Timer3.pwm(STEPPER_RIGHT_STEP, 0, rightSpeed);
+    //Timer3.disablePwm(STEPPER_RIGHT_STEP);
   else
-    Timer1.pwm(STEPPER_RIGHT_STEP, DUTY_CYCLE, rightSpeed);
+    Timer3.pwm(STEPPER_RIGHT_STEP, DUTY_CYCLE, rightSpeed);
 }
 
 void initializeSteppers()
 {
   Timer1.initialize(UPDATE_TIME); //set it up!
-  Timer1.attachInterrupt(updateMotors); //attach the update function
+  Timer3.initialize(UPDATE_TIME); //set it up!
+  Timer1.attachInterrupt(updateLeftMotor); //attach the update function
+  Timer3.attachInterrupt(updateRightMotor); //attach the update function
   Timer1.pwm(STEPPER_LEFT_STEP, 0, 1000000); //set up pwm on 9 and 10
-  Timer1.pwm(STEPPER_RIGHT_STEP, 0, 1000000);
+  Timer3.pwm(STEPPER_RIGHT_STEP, 0, 1000000);
 
   // Left Stepper Pins
   pinMode(STEPPER_LEFT_DIR, OUTPUT);
@@ -89,14 +95,20 @@ void setLeftStepperRPM(int rpm)
     digitalWrite(STEPPER_LEFT_DIR, HIGH);
   else
   {
+    noInterrupts();
     leftSpeed = 0;
+    interrupts();
     return;
   }
     
   unsigned long stepsSec = (abs(rpm) * STEPS_REV) / 60;
   Serial.print("stepsSec = ");
   Serial.println(stepsSec);
+
+  noInterrupts();
   leftSpeed = 1000000 / stepsSec;
+  interrupts();
+  
   Serial.print("leftSpeed = ");
   Serial.println(leftSpeed);
 }
@@ -111,15 +123,20 @@ void setRightStepperRPM(int rpm)
     digitalWrite(STEPPER_RIGHT_DIR, LOW);
   else
   {
+    noInterrupts();
     rightSpeed = 0;
+    interrupts();
     return;
   }
 
   unsigned long stepsSec = (abs(rpm) * STEPS_REV) / 60;
   Serial.print("stepsSec = ");
   Serial.println(stepsSec);
+  
+  noInterrupts();
   rightSpeed = 1000000 / stepsSec;
-
+  interrupts();
+  
   Serial.print("rightSpeed = ");
   Serial.println(rightSpeed);
 }

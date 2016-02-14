@@ -1,8 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////
 //    Library Includes
 ////////////////////////////////////////////////////////////////////////////////
-
-#include "TimerOne.h"
 #include "steppers.h"
 //#include "AccelStepper.h"
 
@@ -41,8 +39,7 @@ unsigned char cmdTarget = 0;
 ////////////////////////////////////////////////////////////////////////////////
 //    Global Objects
 ////////////////////////////////////////////////////////////////////////////////
-//AccelStepper leftStepper(1, STEPPER_LEFT_STEP, STEPPER_LEFT_DIR, STEPPER_LEFT_MS1, STEPPER_LEFT_MS2);
-//AccelStepper rightStepper(1, STEPPER_RIGHT_STEP, STEPPER_RIGHT_DIR, STEPPER_RIGHT_MS1, STEPPER_RIGHT_MS2);
+
 
 ////////////////////////////////////////////////////////////////////////////////
 //    Setup Function
@@ -58,14 +55,7 @@ void setup() {
   
   initializeSteppers();
   
-  
-  /*leftStepper.setMaxSpeed(1000);
-  leftStepper.setSpeed(0);
-
-  rightStepper.setMaxSpeed(1000);
-  rightStepper.setSpeed(0);
-  
-  Timer1.initialize(1000); // 500,000 uS = .5 S
+  //Timer1.initialize(1000); // 500,000 uS = .5 S
   //Timer1.attachInterrupt(updateSensors);*/
 }
 
@@ -86,7 +76,6 @@ void loop() {
         setLeftStepperRPM(map(cmdValue, 0, 255, -MAX_SPEED, MAX_SPEED));
       else
         setLeftStepperRPM(0);
-      //analogWrite(MOTOR_LEFT, inputString[1]); //PWM DC Motor
     }
     else if (cmdTarget == MOTOR_RIGHT_TAG)
     {
@@ -94,7 +83,6 @@ void loop() {
         setRightStepperRPM(map(cmdValue, 0, 255, -MAX_SPEED, MAX_SPEED));
       else
         setRightStepperRPM(0);
-      //analogWrite(MOTOR_RIGHT, inputString[1]); //PWM DC Motor
     }
     else
       Serial.println("FML");
@@ -141,4 +129,3 @@ void updateSensors()
   sensorValue |= IR_LEFT_TAG;
   Serial.println(sensorValue);
 }
-
