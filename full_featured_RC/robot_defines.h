@@ -5,8 +5,10 @@
 // motor defines
 #define LEFT_MOTOR_FLAG  0x4C
 #define RIGHT_MOTOR_FLAG 0x52
-#define SERVO_CLAW_CLOSE_TAG  0x41
-#define SERVO_CLAW_RAISE_TAG  0x42
+#define LEFT_MOTOR_STEPS_FLAG  0x39
+#define RIGHT_MOTOR_STEPS_FLAG 0x40
+#define SERVO_CLAW_CLOSE_TAG   0x41
+#define SERVO_CLAW_RAISE_TAG   0x42
 
 //communication defines
 #define ROBOT_BAUDRATE 115200
