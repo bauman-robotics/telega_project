@@ -73,7 +73,7 @@ int update_button(int button, int button_state, int serial_file)
 			if(button_state == 1)
 			{
 				value = 255;
-				printf("Driving left motor.\n");
+				printf("Driving left motor.\r");
 				send_command(&flag, &value, serial_file);//do left bumper pressed thing
 			}
 			if(button_state == 0)
@@ -130,6 +130,18 @@ int update_button(int button, int button_state, int serial_file)
                 value = 0;
                 printf("Opening claw.\r");
                 send_command(&flag, &value, serial_file);//do Y button pressed thing
+            }
+			break;
+        case BUTTON_BACK:
+            flag = LEFT_MOTOR_STEPS_FLAG;
+            if(button_state == 1)
+            {
+                int steps = 400;
+                int seconds = 5;
+                printf("Moving %i steps in %i seconds.\r", steps, seconds);
+                write(&flag, serial_port, 1);
+                write(&steps, serial_port, 4);
+                write(&seconds, serial_port, 4);
             }
 			break;
 	}
