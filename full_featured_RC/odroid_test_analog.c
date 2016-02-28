@@ -87,7 +87,7 @@ int update_button(int button, int button_state, int serial_file)
 			if(button_state == 1)
 			{
 				value = 255;
-				printf("Driving right motor.\n");
+				printf("Driving right motor.\r");
 				send_command(&flag, &value, serial_file);//do left bumper pressed thing
 			}
 			if(button_state == 0)
@@ -100,40 +100,38 @@ int update_button(int button, int button_state, int serial_file)
 			flag = SERVO_CLAW_RAISE_TAG;
 			if(button_state == 1)
 			{
-                                value = 0;
-                                printf("Lowering claw.\n");
-                                send_command(&flag, &value, serial_file);//do A button pressed thing
-                        }
+                value = 0;
+                printf("Lowering claw.\r");
+                send_command(&flag, &value, serial_file);//do A button pressed thing
+            }
 			break;
 		case BUTTON_Y:
-                        flag = SERVO_CLAW_RAISE_TAG;
-                        if(button_state == 1)
-                        {
-                                value = 255;
-                                printf("Raising claw.\n");
-                                send_command(&flag, &value, serial_file);//do Y button pressed thing
-                        }
+            flag = SERVO_CLAW_RAISE_TAG;
+            if(button_state == 1)
+            {
+                value = 255;
+                printf("Raising claw.\r");
+                send_command(&flag, &value, serial_file);//do Y button pressed thing
+            }
 			break;
 		case BUTTON_X:
-                        flag = SERVO_CLAW_CLOSE_TAG;
-                        if(button_state == 1)
-                        {
-                                value = 255;
-                                printf("Closing claw.\n");
-                                send_command(&flag, &value, serial_file);//do A button pressed thing
-                        }
+            flag = SERVO_CLAW_CLOSE_TAG;
+            if(button_state == 1)
+            {
+                value = 255;
+                printf("Closing claw.\r");
+                send_command(&flag, &value, serial_file);//do A button pressed thing
+            }
 			break;
-                case BUTTON_B:
-                        flag = SERVO_CLAW_CLOSE_TAG;
-                        if(button_state == 1)
-                        {
-                                value = 0;
-                                printf("Opening claw.\n");
-                                send_command(&flag, &value, serial_file);//do Y button pressed thing
-                        }
+        case BUTTON_B:
+            flag = SERVO_CLAW_CLOSE_TAG;
+            if(button_state == 1)
+            {
+                value = 0;
+                printf("Opening claw.\r");
+                send_command(&flag, &value, serial_file);//do Y button pressed thing
+            }
 			break;
-
-
 	}
 	return 0;
 }
@@ -151,7 +149,7 @@ int update_axis(int axis, int axis_value, int serial_file)
 				value = 127;
 			if(value < 127 && (value + DEADZONE) > 127)
 				value = 127; 
-			printf("Driving left motor to speed: %i\n", value);
+			printf("Driving left motor to speed: %i\r", value);
 			send_command(&flag, &value, serial_file);//do left stick up down thing
 			break;
 		case AXIS_RIGHT_STICK_VERTICAL:
@@ -161,7 +159,7 @@ int update_axis(int axis, int axis_value, int serial_file)
 				value = 127;
 			if(value < 127 && (value + DEADZONE) > 127)
 				value = 127; 
-			printf("Driving right motor to speed: %i\n", value);
+			printf("Driving right motor to speed: %i\r", value);
 			send_command(&flag, &value, serial_file);//do right stick up down thing
 			break;
 	}
