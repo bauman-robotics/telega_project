@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <limits.h>
+#include <string.h>
 #include "joystick.h"
 #include "robot_defines.h"
 #include "easy_serial.h"
@@ -73,7 +74,7 @@ int update_button(int button, int button_state, int serial_file)
 			if(button_state == 1)
 			{
 				value = 255;
-				printf("Driving left motor.\r");
+				printf("Driving left motor.\n");
 				send_command(&flag, &value, serial_file);//do left bumper pressed thing
 			}
 			if(button_state == 0)
@@ -87,7 +88,7 @@ int update_button(int button, int button_state, int serial_file)
 			if(button_state == 1)
 			{
 				value = 255;
-				printf("Driving right motor.\r");
+				printf("Driving right motor.\n");
 				send_command(&flag, &value, serial_file);//do left bumper pressed thing
 			}
 			if(button_state == 0)
@@ -101,7 +102,7 @@ int update_button(int button, int button_state, int serial_file)
 			if(button_state == 1)
 			{
                 value = 0;
-                printf("Lowering claw.\r");
+                printf("Lowering claw.\n");
                 send_command(&flag, &value, serial_file);//do A button pressed thing
             }
 			break;
@@ -110,7 +111,7 @@ int update_button(int button, int button_state, int serial_file)
             if(button_state == 1)
             {
                 value = 255;
-                printf("Raising claw.\r");
+                printf("Raising claw.\n");
                 send_command(&flag, &value, serial_file);//do Y button pressed thing
             }
 			break;
@@ -119,7 +120,7 @@ int update_button(int button, int button_state, int serial_file)
             if(button_state == 1)
             {
                 value = 255;
-                printf("Closing claw.\r");
+                printf("Closing claw.\n");
                 send_command(&flag, &value, serial_file);//do A button pressed thing
             }
 			break;
@@ -128,7 +129,7 @@ int update_button(int button, int button_state, int serial_file)
             if(button_state == 1)
             {
                 value = 0;
-                printf("Opening claw.\r");
+                printf("Opening claw.\n");
                 send_command(&flag, &value, serial_file);//do Y button pressed thing
             }
 			break;
@@ -137,14 +138,17 @@ int update_button(int button, int button_state, int serial_file)
             if(button_state == 1)
             {
                 int steps = 400;
-                int seconds = 5;
-                printf("Moving %i steps in %i seconds.\r", steps, seconds);
-                write(&flag, serial_port, 1);
-                write(&steps, serial_port, 4);
-                write(&seconds, serial_port, 4);
-            }
+                int seconds = 2;
+                printf("\nMoving %i(%x) steps in %i(%x) seconds.\n", steps, steps, seconds, seconds);
+                int n = write(serial_file, &flag, 1);
+                n = n + write(serial_file, &steps, sizeof(steps));
+                n = n + write(serial_file, &seconds, sizeof(seconds));
+                printf("Wrote %i bytes.\n", n);
+             }
 			break;
 	}
+    //printf("\33[2K"); //clear the line
+    fflush(stdout); //flush the buffer
 	return 0;
 }
 		
@@ -161,7 +165,7 @@ int update_axis(int axis, int axis_value, int serial_file)
 				value = 127;
 			if(value < 127 && (value + DEADZONE) > 127)
 				value = 127; 
-			printf("Driving left motor to speed: %i\r", value);
+			printf("Driving left motor to speed: %i\n", value);
 			send_command(&flag, &value, serial_file);//do left stick up down thing
 			break;
 		case AXIS_RIGHT_STICK_VERTICAL:
@@ -171,11 +175,12 @@ int update_axis(int axis, int axis_value, int serial_file)
 				value = 127;
 			if(value < 127 && (value + DEADZONE) > 127)
 				value = 127; 
-			printf("Driving right motor to speed: %i\r", value);
+			printf("Driving right motor to speed: %i\n", value);
 			send_command(&flag, &value, serial_file);//do right stick up down thing
 			break;
 	}
 	return 0;
+    fflush(stdout);
 }		
 
 
@@ -185,6 +190,7 @@ int main(int argc, char *argv[])
 {
 	int  joy_file, received, serial_file; // file IDs for the joy, in serial, and out serial ports
 	char joy_address[32] = "/dev/input/";
+    char buffer[512] = "";
 	int  old_axis_values[8] = {0};     // intialize all buttons to "off" (0) this array is check edagainst for button updates and if an update is found the update is sent. Axis stuff is the same
 	int  old_button_values[11] = {0};  // array as mentioned above     
 	int  new_button_values[11] = {0};  // just look above 
@@ -218,7 +224,7 @@ int main(int argc, char *argv[])
 	
 	if(serial_file < 0)
 	{
-		printf("Can't open serial port."); // arduino not located, please stop breaking things
+		printf("Can't open serial port.\n"); // arduino not located, please stop breaking things
 		exit(3);
 	}
 
@@ -244,6 +250,13 @@ int main(int argc, char *argv[])
 		send_button_updates(old_button_values, new_button_values, serial_file); // checks bot the old and new button arrays for differences, if it finds one then an update is sent
 		send_axis_updates(old_axis_values, new_axis_values, serial_file); // ditto from above
 		
+        int n = read(serial_file, &buffer, sizeof(buffer));
+        if(n>0)
+        {
+            buffer[n] = '\0';
+            printf("\n-%s", buffer);
+            fflush(stdout);
+        }
 	}
 }
 
