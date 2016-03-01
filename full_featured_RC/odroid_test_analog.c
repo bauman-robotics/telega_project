@@ -202,7 +202,7 @@ int update_axis(int axis, int axis_value, int serial_file)
 int main(int argc, char *argv[])
 {
 	int  joy_file, received, serial_file; // file IDs for the joy, in serial, and out serial ports
-	char joy_address[32] = "/dev/input/";
+	char joy_address[32] = "/dev/input/js0";
     char buffer[512] = "";
 	int  old_axis_values[8] = {0};     // intialize all buttons to "off" (0) this array is check edagainst for button updates and if an update is found the update is sent. Axis stuff is the same
 	int  old_button_values[11] = {0};  // array as mentioned above     
@@ -219,26 +219,34 @@ int main(int argc, char *argv[])
 	}
 	if(argc == 2)
 	{
-		strcat(joy_address, argv[1]);
+		strcpy(joy_address, argv[1]);
 		joy_file = open_joystick(joy_address); // sets the joystick to attach to, assumes that the arduino is mapped as seen in the ROBOT_DEFINITIONS.h
 	}
 	else if(argc == 1)
 	{
-		joy_file = open_joystick("/dev/input/js0"); // if not specified use js0
+		joy_file = open_joystick(joy_address); // if not specified use js0
 	}
 	
 	if (joy_file < 0) 
 	{
-		printf("Joystick open failed.\n"); // a thing is broken and you should stop
-		exit(2);
+        while(joy_file < 0)
+        {
+		    printf("Joystick open failed, trying again in 1 sec.\n"); // a thing is broken and you should stop
+            sleep(1);
+		    open_joystick(joy_address);
+        }
 	}
 
 	serial_file = serialport_init(ARDUINO_COMM_LOCATION, ROBOT_BAUDRATE); // attempts to open the connection to the arduino with the BAUDRATE specified in the ROBOT_DEFINITIONS.h
 	
 	if(serial_file < 0)
 	{
-		printf("Can't open serial port.\n"); // arduino not located, please stop breaking things
-		exit(3);
+        while(serial_file < 0)
+        {
+		    printf("Can't open serial port, trying again in 1 sec.\n"); // arduino not located, please stop breaking things
+		    sleep(1);
+            serial_file = serialport_init(ARDUINO_COMM_LOCATION, ROBOT_BAUDRATE);
+        }
 	}
 
 	clearPort(serial_file);
