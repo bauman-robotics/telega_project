@@ -146,6 +146,19 @@ int update_button(int button, int button_state, int serial_file)
                 printf("Wrote %i bytes.\n", n);
              }
 			break;
+        case BUTTON_START:
+            flag = RIGHT_MOTOR_STEPS_FLAG;
+            if(button_state == 1)
+            {
+                int steps = 400;
+                int seconds = 2;
+                printf("\nMoving %i(%x) steps in %i(%x) seconds.\n", steps, steps, seconds, seconds);
+                int n = write(serial_file, &flag, 1);
+                n = n + write(serial_file, &steps, sizeof(steps));
+                n = n + write(serial_file, &seconds, sizeof(seconds));
+                printf("Wrote %i bytes.\n", n);
+             }
+			break;
 	}
     //printf("\33[2K"); //clear the line
     fflush(stdout); //flush the buffer
