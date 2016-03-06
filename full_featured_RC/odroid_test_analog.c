@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <limits.h>
 #include <string.h>
-//#include "joystick.h"
+#include "joystick.h"
 #include "robot_defines.h"
 #include "easy_serial.h"
 #include "360_controller_map.h"
