@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <limits.h>
 #include <string.h>
-#include "joystick.h"
+//#include "joystick.h"
 #include "robot_defines.h"
 #include "easy_serial.h"
 #include "360_controller_map.h"
@@ -250,7 +250,7 @@ int main(int argc, char *argv[])
 	}
 
 	clearPort(serial_file);
-
+	printf("serial_file = %d\n", serial_file );
 	while (1) {
 		received = read_joystick_event(&jse); // check for a joystick update
 		//printf("Reading...\n");
