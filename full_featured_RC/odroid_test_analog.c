@@ -266,7 +266,7 @@ int main(int argc, char *argv[])
 	while (1) {
 		received = read_joystick_event(&jse); // check for a joystick update
 		//printf("Reading...\n");
-		usleep(1000); // check for updates every 1mS
+		//usleep(1000); // check for updates every 1mS
 		if (received == 1) { // if an update is available
 			switch(jse.type)
 			{
@@ -282,7 +282,7 @@ int main(int argc, char *argv[])
 		}
 		send_button_updates(old_button_values, new_button_values, serial_file); // checks bot the old and new button arrays for differences, if it finds one then an update is sent
 		send_axis_updates(old_axis_values, new_axis_values, serial_file); // ditto from above
-		
+		usleep(10000);
         int n = read(serial_file, &buffer, sizeof(buffer));
 
         if(n > 0)
