@@ -165,6 +165,8 @@ int update_button(int button, int button_state, int serial_file)
             {
                 printf("Requesting sensor input\n");
                 write(serial_file, &flag, 1);
+                int n = read(serial_file, &buffer, sizeof(buffer));
+        		printf("Read %d bytes from buffer.\n", n);
             }
             break;
 	}
@@ -282,8 +284,8 @@ int main(int argc, char *argv[])
 		send_axis_updates(old_axis_values, new_axis_values, serial_file); // ditto from above
 		
         int n = read(serial_file, &buffer, sizeof(buffer));
-        printf("Read %d bytes from buffer.\n", n);
-        if(n>0)
+
+        if(n > 0)
         {
             buffer[n] = '\0';
             printf("buffer (%d bytes):\n==================\n%s\n==================\nEnd buffer. Yay.\n", n, buffer);  // print the part of the buffer that had stuff in it
