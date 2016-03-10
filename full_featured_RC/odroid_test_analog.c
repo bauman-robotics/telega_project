@@ -167,9 +167,6 @@ int update_button(int button, int button_state, int serial_file)
             {
                 printf("Requesting sensor input\n");
                 write(serial_file, &flag, 1);
-                usleep(2000);
-                int n = read(serial_file, &buffer, sizeof(buffer));
-        		printf("Read %d bytes from buffer.\n", n);
             }
             break;
 	}
