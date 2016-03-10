@@ -277,7 +277,7 @@ int main(int argc, char *argv[])
         if(n>0)
         {
             buffer[n] = '\0';
-            printf("\n-%s", buffer);
+            printf("buffer (%d bytes):\n==================\n%s\n==================\n", n, buffer);  // print the part of the buffer that had stuff in it
             fflush(stdout);
         }
 	}
