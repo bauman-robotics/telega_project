@@ -167,6 +167,7 @@ int update_button(int button, int button_state, int serial_file)
             {
                 printf("Requesting sensor input\n");
                 write(serial_file, &flag, 1);
+                usleep(2000);
                 int n = read(serial_file, &buffer, sizeof(buffer));
         		printf("Read %d bytes from buffer.\n", n);
             }
@@ -268,7 +269,7 @@ int main(int argc, char *argv[])
 	while (1) {
 		received = read_joystick_event(&jse); // check for a joystick update
 		//printf("Reading...\n");
-		usleep(2000); // check for updates every 1mS
+		usleep(1000); // check for updates every 1mS
 		if (received == 1) { // if an update is available
 			switch(jse.type)
 			{
