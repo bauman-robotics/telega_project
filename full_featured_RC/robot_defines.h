@@ -11,8 +11,10 @@
 #define SERVO_CLAW_RAISE_TAG   0x42
 
 //communication defines
-#define ROBOT_BAUDRATE 115200
+#define ROBOT_BAUDRATE 57600
 #define ARDUINO_COMM_LOCATION "/dev/robot/arduino"
 #define ARDUINO_RECEIVED_BYTE 0x13
 
+
+#define SENSOR_REQUEST 0x37
 #endif

@@ -159,6 +159,14 @@ int update_button(int button, int button_state, int serial_file)
                 printf("Wrote %i bytes.\n", n);
              }
 			break;
+        case BUTTON_XBOX:
+            flag = SENSOR_REQUEST;
+            if ( button_state == 1 )
+            {
+                printf("Requesting sensor input\n");
+                write(serial_file, &flag, 1);
+            }
+            break;
 	}
     //printf("\33[2K"); //clear the line
     fflush(stdout); //flush the buffer
@@ -256,7 +264,7 @@ int main(int argc, char *argv[])
 	while (1) {
 		received = read_joystick_event(&jse); // check for a joystick update
 		//printf("Reading...\n");
-		usleep(1000); // check for updates every 1mS
+		usleep(2000); // check for updates every 1mS
 		if (received == 1) { // if an update is available
 			switch(jse.type)
 			{
@@ -277,7 +285,7 @@ int main(int argc, char *argv[])
         if(n>0)
         {
             buffer[n] = '\0';
-            printf("buffer (%d bytes):\n==================\n%s\n==================\n", n, buffer);  // print the part of the buffer that had stuff in it
+            printf("buffer (%d bytes):\n==================\n%s\n==================\nEnd buffer. Yay.\n", n, buffer);  // print the part of the buffer that had stuff in it
             fflush(stdout);
         }
 	}
