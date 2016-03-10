@@ -67,6 +67,8 @@ int update_button(int button, int button_state, int serial_file)
 {
 	unsigned char flag = 0;
 	char value = 0;
+	char buffer[512] = "";
+
 	switch(button)
 	{
 		case BUTTON_LEFT_BUMPER:
