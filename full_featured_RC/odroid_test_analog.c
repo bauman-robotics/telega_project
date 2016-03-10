@@ -282,7 +282,7 @@ int main(int argc, char *argv[])
 		send_axis_updates(old_axis_values, new_axis_values, serial_file); // ditto from above
 		
         int n = read(serial_file, &buffer, sizeof(buffer));
-        printf("Read %d bytes from buffer.\n");
+        printf("Read %d bytes from buffer.\n", n);
         if(n>0)
         {
             buffer[n] = '\0';
