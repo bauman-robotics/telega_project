@@ -70,7 +70,7 @@ void poll_sensors( int serial_port )
     printf("Front: %d\n", front );
     printf("Back: %d\n", back );
     printf("Left: %d\n", left );
-    printf("Right: %d\n" right );
+    printf("Right: %d\n", right );
     printf("============\n");
 }
 
