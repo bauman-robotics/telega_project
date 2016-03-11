@@ -5,6 +5,7 @@
 #include "robot_defines.h"
 #include "easy_serial.h"
 #include "360_controller_map.h"
+#include "sensors.h"
 
 long map(long x, long in_min, long in_max, long out_min, long out_max)
 {
@@ -166,7 +167,7 @@ int update_button(int button, int button_state, int serial_file)
             if ( button_state == 1 )
             {
                 printf("Requesting sensor input\n");
-                write(serial_file, &flag, 1);
+                poll_sensors( serial_file );
             }
             break;
 	}
