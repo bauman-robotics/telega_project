@@ -140,8 +140,8 @@ int update_button(int button, int button_state, int serial_file)
             flag = LEFT_MOTOR_STEPS_FLAG;
             if(button_state == 1)
             {
-                int steps = 400;
-                int millis = 2000;
+                int steps = 50;
+                int millis = 250;
                 printf("\nMoving %i(%x) steps in %i(%x) millis.\n", steps, steps, millis, millis);
                 int n = write(serial_file, &flag, 1);
                 n = n + write(serial_file, &steps, sizeof(steps));
@@ -153,8 +153,8 @@ int update_button(int button, int button_state, int serial_file)
             flag = RIGHT_MOTOR_STEPS_FLAG;
             if(button_state == 1)
             {
-                int steps = 400;
-                int millis = 2000;
+                int steps = 50;
+                int millis = 250;
                 printf("\nMoving %i(%x) steps in %i(%x) millis.\n", steps, steps, millis, millis);
                 int n = write(serial_file, &flag, 1);
                 n = n + write(serial_file, &steps, sizeof(steps));
