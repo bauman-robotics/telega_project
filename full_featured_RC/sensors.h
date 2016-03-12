@@ -3,6 +3,13 @@
 #include <stdio.h>
 #include <unistd.h>
 
+int map_voltage_to_distance( int voltage )
+{
+    //where the input "voltage" is the returned ADC 10bit value
+    // https://acroname.com/articles/linearizing-sharp-ranger-data
+    return ( (6787)/(voltage - 3) - 4 );
+}
+
 
 void temporary_sensor_request( int serial_port )
 {
