@@ -15,7 +15,7 @@ long map(long x, long in_min, long in_max, long out_min, long out_max)
 unsigned char map_stick(short input)
 {
   //printf("%li", map(input, SHRT_MIN, SHRT_MAX, -127, 127));
-  return map(input, SHRT_MIN, SHRT_MAX, 0, 255); //centerpoint @ 127;
+  return map(input, SHRT_MIN, SHRT_MAX, 255, 0); //centerpoint @ 127;
 }
 
 void button_update(struct js_event *jse, int *button_update_array)
