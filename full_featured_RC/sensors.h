@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <unistd.h>
 
-int map_voltage_to_distance( int voltage )
+int voltage_to_distance( int voltage )
 {
     //where the input "voltage" is the returned ADC 10bit value
     // https://acroname.com/articles/linearizing-sharp-ranger-data
@@ -74,10 +74,10 @@ void poll_sensors( int serial_port )
     back = back << 8;
     back = back | right_byte;
 
-    printf("Front: %d\n", front );
-    printf("Back: %d\n", back );
-    printf("Left: %d\n", left );
-    printf("Right: %d\n", right );
+    printf("Front: %d (Centimeters: %d)\n", front, voltage_to_distance(front) );
+    printf("Back: %d (Centimeters: %d)\n", back, voltage_to_distance(back) );
+    printf("Left: %d (Centimeters: %d)\n", left, voltage_to_distance(left) );
+    printf("Right: %d (Centimeters: %d)\n", right, voltage_to_distance(right) );
     printf("============\n");
 }
 
