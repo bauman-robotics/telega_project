@@ -140,12 +140,12 @@ int update_button(int button, int button_state, int serial_file)
             flag = LEFT_MOTOR_STEPS_FLAG;
             if(button_state == 1)
             {
-                int steps = 50;
-                int millis = 250;
-                printf("\nMoving %i(%x) steps in %i(%x) millis.\n", steps, steps, millis, millis);
+                int steps = 400;
+                int seconds = 2;
+                printf("\nMoving %i(%x) steps in %i(%x) seconds.\n", steps, steps, seconds, seconds);
                 int n = write(serial_file, &flag, 1);
                 n = n + write(serial_file, &steps, sizeof(steps));
-                n = n + write(serial_file, &millis, sizeof(millis));
+                n = n + write(serial_file, &seconds, sizeof(seconds));
                 printf("Wrote %i bytes.\n", n);
              }
 			break;
@@ -153,12 +153,12 @@ int update_button(int button, int button_state, int serial_file)
             flag = RIGHT_MOTOR_STEPS_FLAG;
             if(button_state == 1)
             {
-                int steps = 50;
-                int millis = 250;
-                printf("\nMoving %i(%x) steps in %i(%x) millis.\n", steps, steps, millis, millis);
+                int steps = 400;
+                int seconds = 2;
+                printf("\nMoving %i(%x) steps in %i(%x) seconds.\n", steps, steps, seconds, seconds);
                 int n = write(serial_file, &flag, 1);
                 n = n + write(serial_file, &steps, sizeof(steps));
-                n = n + write(serial_file, &millis, sizeof(millis));
+                n = n + write(serial_file, &seconds, sizeof(seconds));
                 printf("Wrote %i bytes.\n", n);
              }
 			break;
