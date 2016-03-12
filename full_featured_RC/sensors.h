@@ -3,11 +3,13 @@
 #include <stdio.h>
 #include <unistd.h>
 
-int voltage_to_distance( int voltage )
+#define IR_DISTANCE_SCALAR 0.5  //(0.5) for blue, anyways
+
+double voltage_to_distance( int voltage )
 {
     //where the input "voltage" is the returned ADC 10bit value
     // https://acroname.com/articles/linearizing-sharp-ranger-data
-    return ( (6787)/(voltage - 3) - 4 );
+    return IR_DISTANCE_SCALAR * ( (6787.0)/(voltage - 3.0) - 4.0 );
 }
 
 
@@ -74,10 +76,10 @@ void poll_sensors( int serial_port )
     back = back << 8;
     back = back | right_byte;
 
-    printf("Front: %d (Centimeters: %d)\n", front, voltage_to_distance(front) );
-    printf("Back: %d (Centimeters: %d)\n", back, voltage_to_distance(back) );
-    printf("Left: %d (Centimeters: %d)\n", left, voltage_to_distance(left) );
-    printf("Right: %d (Centimeters: %d)\n", right, voltage_to_distance(right) );
+    printf("Front: %d (Centimeters: %f)\n", front, voltage_to_distance(front) );
+    printf("Back: %d (Centimeters: %f)\n", back, voltage_to_distance(back) );
+    printf("Left: %d (Centimeters: %f)\n", left, voltage_to_distance(left) );
+    printf("Right: %d (Centimeters: %f)\n", right, voltage_to_distance(right) );
     printf("============\n");
 }
 
