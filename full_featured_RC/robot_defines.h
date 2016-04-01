@@ -45,6 +45,7 @@
 //communication defines
 #define ROBOT_BAUDRATE 115200
 #define ARDUINO_COMM_LOCATION "/dev/robot/arduino"
+#define SENSORS_COMM_LOCATION "/dev/robot/sensors"
 #define ARDUINO_RECEIVED_BYTE 0x13
 #define SENSOR_REQUEST 0x60
 #define LEFT_SENSOR_REQUEST 0x61

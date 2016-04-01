@@ -30,41 +30,41 @@ void axis_update(struct js_event *jse, int *axis_update_array)
 	return; 
 }
 
-int  send_button_updates(int *old_button_array, int *new_button_array, int serial_file)
+int  send_button_updates(int *old_button_array, int *new_button_array, int send_port, int receive_port)
 {
 	int i = 0;
 	for(i = 0; i < BUTTON_COUNT; i++)
 		if(new_button_array[i] != old_button_array[i])
 		{
-			update_button(i, new_button_array[i], serial_file);
+			update_button(i, new_button_array[i], send_port, receive_port);
 			old_button_array[i] = new_button_array[i];
 		}
 	return 0;
 }
-int  send_axis_updates(int *old_axis_array, int *new_axis_array, int serial_file)
+int  send_axis_updates(int *old_axis_array, int *new_axis_array, int send_port)
 {
 	int i = 0;
 	for(i = 0; i < AXIS_COUNT; i++)
 		if(new_axis_array[i] != old_axis_array[i])
 		{
-			update_axis(i, new_axis_array[i], serial_file);
+			update_axis(i, new_axis_array[i], send_port);
 			old_axis_array[i] = new_axis_array[i];
 		}
 	return 0;
 }
 
-int send_command(unsigned char *flag, unsigned char *value, int serial_file)
+int send_command(unsigned char *flag, unsigned char *value, int send_port)
 {
 	unsigned char received = 0;
-	clearPort(serial_file);
-	write(serial_file, flag, 1);
-	write(serial_file, value, 1);
+	clearPort(send_port);
+	write(send_port, flag, 1);
+	write(send_port, value, 1);
 //	while(received != ARDUINO_RECEIVED_BYTE);
-//		read(serial_file, &received, 1);
+//		read(receive_port, &received, 1);
 	return 0;
 }
 
-int update_button(int button, int button_state, int serial_file)
+int update_button(int button, int button_state, int send_port, int receive_port)
 {
 	unsigned char flag = 0;
 	char value = 0;
@@ -78,12 +78,12 @@ int update_button(int button, int button_state, int serial_file)
 			{
 				value = 255;
 				printf("Driving left motor.\n");
-				send_command(&flag, &value, serial_file);//do left bumper pressed thing
+				send_command(&flag, &value, send_port);//do left bumper pressed thing
 			}
 			if(button_state == 0)
 			{
 				value = 127;
-				send_command(&flag, &value, serial_file);//do left bumper released things
+				send_command(&flag, &value, send_port);//do left bumper released things
 			}
 			break;
 		case BUTTON_RIGHT_BUMPER:
@@ -92,12 +92,12 @@ int update_button(int button, int button_state, int serial_file)
 			{
 				value = 255;
 				printf("Driving right motor.\n");
-				send_command(&flag, &value, serial_file);//do left bumper pressed thing
+				send_command(&flag, &value, send_port);//do left bumper pressed thing
 			}
 			if(button_state == 0)
 			{
 				value = 127;
-				send_command(&flag, &value, serial_file);		
+				send_command(&flag, &value, send_port);		
 			}
 			break;
 		case BUTTON_A:
@@ -106,7 +106,7 @@ int update_button(int button, int button_state, int serial_file)
 			{
                 value = 0;
                 printf("Lowering claw.\n");
-                send_command(&flag, &value, serial_file);//do A button pressed thing
+                send_command(&flag, &value, send_port);//do A button pressed thing
             }
 			break;
 		case BUTTON_Y:
@@ -115,7 +115,7 @@ int update_button(int button, int button_state, int serial_file)
             {
                 value = 255;
                 printf("Raising claw.\n");
-                send_command(&flag, &value, serial_file);//do Y button pressed thing
+                send_command(&flag, &value, send_port);//do Y button pressed thing
             }
 			break;
 		case BUTTON_X:
@@ -124,7 +124,7 @@ int update_button(int button, int button_state, int serial_file)
             {
                 value = 255;
                 printf("Closing claw.\n");
-                send_command(&flag, &value, serial_file);//do A button pressed thing
+                send_command(&flag, &value, send_port);//do A button pressed thing
             }
 			break;
         case BUTTON_B:
@@ -133,7 +133,7 @@ int update_button(int button, int button_state, int serial_file)
             {
                 value = 0;
                 printf("Opening claw.\n");
-                send_command(&flag, &value, serial_file);//do Y button pressed thing
+                send_command(&flag, &value, send_port);//do Y button pressed thing
             }
 			break;
         case BUTTON_BACK:
@@ -143,9 +143,9 @@ int update_button(int button, int button_state, int serial_file)
                 int steps = 400;
                 int seconds = 2;
                 printf("\nMoving %i(%x) steps in %i(%x) seconds.\n", steps, steps, seconds, seconds);
-                int n = write(serial_file, &flag, 1);
-                n = n + write(serial_file, &steps, sizeof(steps));
-                n = n + write(serial_file, &seconds, sizeof(seconds));
+                int n = write(send_port, &flag, 1);
+                n = n + write(send_port, &steps, sizeof(steps));
+                n = n + write(send_port, &seconds, sizeof(seconds));
                 printf("Wrote %i bytes.\n", n);
              }
 			break;
@@ -156,9 +156,9 @@ int update_button(int button, int button_state, int serial_file)
                 int steps = 400;
                 int seconds = 2;
                 printf("\nMoving %i(%x) steps in %i(%x) seconds.\n", steps, steps, seconds, seconds);
-                int n = write(serial_file, &flag, 1);
-                n = n + write(serial_file, &steps, sizeof(steps));
-                n = n + write(serial_file, &seconds, sizeof(seconds));
+                int n = write(send_port, &flag, 1);
+                n = n + write(send_port, &steps, sizeof(steps));
+                n = n + write(send_port, &seconds, sizeof(seconds));
                 printf("Wrote %i bytes.\n", n);
              }
 			break;
@@ -167,7 +167,7 @@ int update_button(int button, int button_state, int serial_file)
             if ( button_state == 1 )
             {
                 printf("Requesting sensor input\n");
-                poll_sensors( serial_file );
+                poll_sensors( send_port, receive_port );
             }
             break;
 	}
@@ -176,7 +176,7 @@ int update_button(int button, int button_state, int serial_file)
 	return 0;
 }
 		
-int update_axis(int axis, int axis_value, int serial_file)
+int update_axis(int axis, int axis_value, int send_port)
 {
 	unsigned char flag = 0;
 	unsigned char value = 0;
@@ -190,7 +190,7 @@ int update_axis(int axis, int axis_value, int serial_file)
 			if(value < 127 && (value + DEADZONE) > 127)
 				value = 127; 
 			printf("Driving left motor to speed: %i\n", value);
-			send_command(&flag, &value, serial_file);//do left stick up down thing
+			send_command(&flag, &value, send_port);//do left stick up down thing
 			break;
 		case AXIS_RIGHT_STICK_VERTICAL:
 			flag =RIGHT_MOTOR_FLAG;
@@ -200,7 +200,7 @@ int update_axis(int axis, int axis_value, int serial_file)
 			if(value < 127 && (value + DEADZONE) > 127)
 				value = 127; 
 			printf("Driving right motor to speed: %i\n", value);
-			send_command(&flag, &value, serial_file);//do right stick up down thing
+			send_command(&flag, &value, send_port);//do right stick up down thing
 			break;
 	}
 	return 0;
@@ -212,7 +212,7 @@ int update_axis(int axis, int axis_value, int serial_file)
 /* a little test program */
 int main(int argc, char *argv[])
 {
-	int  joy_file, received, serial_file; // file IDs for the joy, in serial, and out serial ports
+	int  joy_file, received, send_port, receive_port; // file IDs for the joy, in serial, and out serial ports
 	char joy_address[32] = "/dev/input/js0";
     char buffer[512] = "";
 	int  old_axis_values[8] = {0};     // intialize all buttons to "off" (0) this array is check edagainst for button updates and if an update is found the update is sent. Axis stuff is the same
@@ -248,21 +248,24 @@ int main(int argc, char *argv[])
         }
 	}
 
-	serial_file = serialport_init(ARDUINO_COMM_LOCATION, ROBOT_BAUDRATE); // attempts to open the connection to the arduino with the BAUDRATE specified in the ROBOT_DEFINITIONS.h
+	send_port = serialport_init(ARDUINO_COMM_LOCATION, ROBOT_BAUDRATE); // attempts to open the connection to the arduino with the BAUDRATE specified in the ROBOT_DEFINITIONS.h
+	receive_port = serialport_init(SENSORS_COMM_LOCATION, ROBOT_BAUDRATE );
 	
-	if(serial_file < 0)
+	if(send_port < 0)
 	{
-        while(serial_file < 0)
+        while(send_port < 0)
         {
 		    printf("Can't open serial port, trying again in 1 sec.\n"); // arduino not located, please stop breaking things
 		    sleep(1);
-            serial_file = serialport_init(ARDUINO_COMM_LOCATION, ROBOT_BAUDRATE);
+            send_port = serialport_init(ARDUINO_COMM_LOCATION, ROBOT_BAUDRATE);
+            receive_port = serialport_init(SENSORS_COMM_LOCATION, ROBOT_BAUDRATE );
         }
 	}
 
-	clearPort(serial_file);
+	clearPort(send_port);
 
-	printf("serial_file = %d\n", serial_file );
+	printf("send_port = %d\n", send_port );
+	printf("receive_port = %d\n", receive_port );
 
 	while (1) {
 		received = read_joystick_event(&jse); // check for a joystick update
@@ -281,10 +284,10 @@ int main(int argc, char *argv[])
 					break;
 			}	
 		}
-		send_button_updates(old_button_values, new_button_values, serial_file); // checks bot the old and new button arrays for differences, if it finds one then an update is sent
-		send_axis_updates(old_axis_values, new_axis_values, serial_file); // ditto from above
+		send_button_updates(old_button_values, new_button_values, send_port, receive_port); // checks bot the old and new button arrays for differences, if it finds one then an update is sent
+		send_axis_updates(old_axis_values, new_axis_values, send_port); // ditto from above
 		usleep(1000);
-        int n = read(serial_file, &buffer, sizeof(buffer));
+        int n = read(receive_port, &buffer, sizeof(buffer));
 
         if(n > 0)
         {
