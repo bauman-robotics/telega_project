@@ -258,8 +258,17 @@ int main(int argc, char *argv[])
 		    printf("Can't open serial port, trying again in 1 sec.\n"); // arduino not located, please stop breaking things
 		    sleep(1);
             send_port = serialport_init(ARDUINO_COMM_LOCATION, ROBOT_BAUDRATE);
-            receive_port = serialport_init(SENSORS_COMM_LOCATION, ROBOT_BAUDRATE );
         }
+	}
+
+	if(receive_port < 0)
+	{
+		while(receive_port < 0)
+		{
+			printf("can't open receive_port\n");
+			sleep(1);
+			receive_port = serialport_init(SENSORS_COMM_LOCATION, ROBOT_BAUDRATE );
+		}
 	}
 
 	clearPort(send_port);
