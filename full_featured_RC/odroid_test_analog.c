@@ -249,7 +249,7 @@ int main(int argc, char *argv[])
 	}
 
 	send_port = serialport_init(ARDUINO_COMM_LOCATION, ROBOT_BAUDRATE); // attempts to open the connection to the arduino with the BAUDRATE specified in the ROBOT_DEFINITIONS.h
-	receive_port = serialport_init(SENSORS_COMM_LOCATION, ROBOT_BAUDRATE );
+	
 	
 	if(send_port < 0)
 	{
@@ -260,7 +260,10 @@ int main(int argc, char *argv[])
             send_port = serialport_init(ARDUINO_COMM_LOCATION, ROBOT_BAUDRATE);
         }
 	}
+	clearPort(send_port);
+	printf("send_port = %d\n", send_port );
 
+	receive_port = serialport_init(SENSORS_COMM_LOCATION, ROBOT_BAUDRATE );
 	if(receive_port < 0)
 	{
 		while(receive_port < 0)
@@ -271,9 +274,7 @@ int main(int argc, char *argv[])
 		}
 	}
 
-	clearPort(send_port);
-
-	printf("send_port = %d\n", send_port );
+	clearPort(receive_port);
 	printf("receive_port = %d\n", receive_port );
 
 	while (1) {
