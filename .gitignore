@@ -6,6 +6,7 @@
 
 # Test executable
 test
+rc_control
 
 # Precompiled Headers
 *.gch
