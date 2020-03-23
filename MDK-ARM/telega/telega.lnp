@@ -1,0 +1,25 @@
+--cpu Cortex-M3
+"telega\startup_stm32f103xb.o"
+"telega\main.o"
+"telega\stm32f1xx_it.o"
+"telega\stm32f1xx_hal_msp.o"
+"telega\cobs.o"
+"telega\stm32f1xx_hal_gpio_ex.o"
+"telega\stm32f1xx_hal_tim.o"
+"telega\stm32f1xx_hal_tim_ex.o"
+"telega\stm32f1xx_hal_uart.o"
+"telega\stm32f1xx_hal.o"
+"telega\stm32f1xx_hal_rcc.o"
+"telega\stm32f1xx_hal_rcc_ex.o"
+"telega\stm32f1xx_hal_gpio.o"
+"telega\stm32f1xx_hal_dma.o"
+"telega\stm32f1xx_hal_cortex.o"
+"telega\stm32f1xx_hal_pwr.o"
+"telega\stm32f1xx_hal_flash.o"
+"telega\stm32f1xx_hal_flash_ex.o"
+"telega\stm32f1xx_hal_exti.o"
+"telega\system_stm32f1xx.o"
+--library_type=microlib --strict --scatter "telega\telega.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "telega.map" -o telega\telega.axf
