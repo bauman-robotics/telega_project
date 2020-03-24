@@ -20,44 +20,13 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include <string.h>
 
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
 #include "cobs.h"
-
-#define BUF_SIZE_UPLEVEL	11	// 9 databyte + 2 byte overhead
-#define BUF_SIZE_DRV			6
-
- uint8_t buf_uplevel[BUF_SIZE_UPLEVEL];			// uint8_t code + float (angle_speed + linear_speed)
- uint8_t buf_drv1[BUF_SIZE_DRV];			// uint8_t code + float speed
- uint8_t buf_drv2[BUF_SIZE_DRV];			// uint8_t code + float speed
-
- int dr_count, dr_count_saved, dr_count2, dr_count_saved2, dr_count3, dr_count_saved3;
- int uart_uplevel_ready, uart_drv1_ready, uart_drv2_ready;
- volatile int saved_number;
- int uart_number;
- int multiplayer=1;
- int ch=1;
- float L_vel_left = 0,					// ?????????? v ?????? ??????
-			L_vel_right = 0,
-			L_vel_left_des = 0,				// ???????? v ?????? ??????
-			L_vel_right_des = 0,
-			tmp,											// ??? ?????
-			W_vel = 0, 
-			x_pos = 0, 
-			y_pos = 0,
-			angle_left = 0,
-			angle_right = 0,
-			path_of_left = 0, 				// ??????? ?????? ??????
-			path_of_right = 0,
-			R_wheel = 0.05; // ????????
- 
- 
- uint8_t transmitBuffer[1];
- uint8_t recieved_word=0;
+#include <string.h>
 
 /* USER CODE END Includes */
 
@@ -92,15 +61,20 @@ static void MX_USART2_UART_Init(void);
 static void MX_USART3_UART_Init(void);
 /* USER CODE BEGIN PFP */
 
-void send_to_uart(uint8_t data) {
-	while(!(USART1->SR & USART_SR_TC)); 
-	USART1->DR=data; //UART
-}
-
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+#define BUF_SIZE_UPLEVEL	11								// 9 databyte + 2 byte overhead
+#define BUF_SIZE_DRV			6
+#define BUF_SIZE_DRV_SEND	7
+
+uint8_t buf_uplevel[BUF_SIZE_UPLEVEL];			// uint8_t code + float (angle_speed + linear_speed)
+uint8_t buf_drv1[BUF_SIZE_DRV];							// float speed
+uint8_t buf_drv2[BUF_SIZE_DRV];							// float speed
+uint8_t buf_drv_send[BUF_SIZE_DRV_SEND];					// uint8_t code + float speed
+int uart_uplevel_ready, uart_drv1_ready, uart_drv2_ready;
+int uart_uplevel_send, uart_drv_send;
 
 float	pos_drv1, pos_drv2;
 
@@ -145,13 +119,27 @@ int main(void)
   /* USER CODE BEGIN WHILE */
 	uint8_t buf_uplevel_decoded[BUF_SIZE_UPLEVEL - 2];
 	uint8_t buf_drv_decoded[BUF_SIZE_DRV - 2];
+	uint8_t buf_drv_send_decoded[BUF_SIZE_DRV_SEND - 2];
 	float	speed_l, speed_a;
 	
 	float speed_drv1, speed_drv2;
 	uint8_t code;
 	
+	int DEBUG = 1;
+	
+	if (DEBUG)
+	{
+		speed_l = 0.1;
+		speed_drv1 = speed_l;		// TODO add math model
+		speed_drv2 = -speed_l;
+	}
+	
   while (1)
  {
+	  if (DEBUG)
+	  {
+			
+	  }
 		if (uart_uplevel_ready == 1)
 		{
 			cobs_decode(buf_uplevel, BUF_SIZE_UPLEVEL, buf_uplevel_decoded);
@@ -161,32 +149,48 @@ int main(void)
 			memcpy(&speed_a, buf_uplevel_decoded + sizeof(float), sizeof(float));
 			
 			speed_drv1 = speed_l;		// TODO add math model
-			speed_drv2 = speed_l;				
+			speed_drv2 = -speed_l;				
 		}
 		 
-	if (uart_drv1_ready == 1)
-	{
+		if (uart_drv1_ready == 1)
+		{
 			cobs_decode(buf_drv1, BUF_SIZE_DRV, buf_drv_decoded);
 			memcpy(&pos_drv1, buf_drv_decoded, sizeof(float));
 		
 			// TODO add math model
 			cobs_encode(buf_drv_decoded, sizeof(float), buf_drv1);
 			HAL_UART_Transmit(&huart1, buf_drv1, BUF_SIZE_DRV, 0x0FFF);
-  }
-	
+		}
+
 		if (uart_drv2_ready == 1)
 		{
 			cobs_decode(buf_drv2, BUF_SIZE_DRV, buf_drv_decoded);
 			memcpy(&pos_drv2, buf_drv_decoded, sizeof(float));
 			
 			HAL_UART_Transmit(&huart1, buf_drv2, BUF_SIZE_DRV, 0x0FFF);
-		}	
-    /* USER CODE END WHILE */
+		}
+		
+		if (uart_drv_send)
+		{
+			uart_drv_send = 0;
+			
+			buf_drv_send_decoded[0] = 'v';
+			memcpy(buf_drv_send_decoded + 1, &speed_drv1, sizeof(float));
+			cobs_encode(buf_drv_send_decoded, BUF_SIZE_DRV_SEND - 2, buf_drv_send);
+			HAL_UART_Transmit(&huart2, buf_drv_send, BUF_SIZE_DRV_SEND, 0x0FFF);
+			
+			buf_drv_send_decoded[0] = 'v';
+			memcpy(buf_drv_send_decoded + 1, &speed_drv2, sizeof(float));
+			cobs_encode(buf_drv_send_decoded, BUF_SIZE_DRV_SEND - 2, buf_drv_send);
+			HAL_UART_Transmit(&huart3, buf_drv_send, BUF_SIZE_DRV_SEND, 0x0FFF);
+			
+		}
+		/* USER CODE END WHILE */
 
-    /* USER CODE BEGIN 3 */
+		/* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
-}
+ }
 /**
   * @brief System Clock Configuration
   * @retval None

@@ -51,18 +51,8 @@ extern int uart_uplevel_ready;
 extern int uart_drv1_ready;
 extern int uart_drv2_ready;
 
-extern int dr_count;
-extern int dr_count_saved;
-uint8_t dr_data;
-
-extern int dr_count2;
-extern int dr_count_saved2;
-
-uint8_t dr_data2;
-extern int dr_count3;
-extern int dr_count_saved3;
-
-uint8_t dr_data3;
+extern int uart_uplevel_send;
+extern int uart_drv_send;
 
 /* USER CODE END PV */
 
@@ -205,6 +195,15 @@ void PendSV_Handler(void)
 void SysTick_Handler(void)
 {
   /* USER CODE BEGIN SysTick_IRQn 0 */
+	
+	static int counter;
+	
+	counter++;
+	if (counter > 100)
+	{
+		counter = 0;
+		uart_drv_send = 1;
+	}
 
   /* USER CODE END SysTick_IRQn 0 */
   HAL_IncTick();
