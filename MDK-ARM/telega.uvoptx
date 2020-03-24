@@ -155,6 +155,11 @@
           <WinNumber>1</WinNumber>
           <ItemText>pos_drv1</ItemText>
         </Ww>
+        <Ww>
+          <count>1</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>buf_uplevel</ItemText>
+        </Ww>
       </WatchWindow1>
       <Tracepoint>
         <THDelay>0</THDelay>

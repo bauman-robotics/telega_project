@@ -112,7 +112,9 @@ int main(void)
   MX_USART2_UART_Init();
   MX_USART3_UART_Init();
   /* USER CODE BEGIN 2 */
+	USART1->CR1 |= USART_CR1_RXNEIE;
 	USART2->CR1 |= USART_CR1_RXNEIE;
+	USART3->CR1 |= USART_CR1_RXNEIE;
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -126,14 +128,12 @@ int main(void)
 	uint8_t code;
 	
 	int DEBUG = 1;
-	
 	if (DEBUG)
 	{
-		speed_l = 0.1;
-		speed_drv1 = speed_l;		// TODO add math model
-		speed_drv2 = -speed_l;
+		
 	}
 	
+	speed_l = 0.0f;
   while (1)
  {
 	  if (DEBUG)
