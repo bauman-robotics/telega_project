@@ -1,4 +1,5 @@
 # joystick
-Controlling our Odroid-XU based robot with an Xbox 360 controller.
 
-This is Rem's code for controlling our prototype robot with a 360 controller. This is a fantastic start to getting locomotion code written.
+Control telega from xbox wireless joystick
+Receive events from joystick
+Send uint8_t code + float linear speed(-1.0 -- 1.0 rps) + float angular speed(-1.0 -- 1.0 ??)
