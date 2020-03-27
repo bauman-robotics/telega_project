@@ -36,4 +36,4 @@ rc_control
 *.dSYM/
 
 *.save
-./cmake-build*
+cmake-build-debug/
