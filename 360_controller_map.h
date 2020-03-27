@@ -15,13 +15,13 @@
 // down) and right are positive values
 #define AXIS_LEFT_STICK_VERTICAL    1
 #define AXIS_LEFT_STICK_HORIZONTAL  0
-#define AXIS_RIGHT_STICK_VERTICAL   4
-#define AXIS_RIGHT_STICK_HORIZONTAL 3
+#define AXIS_RIGHT_STICK_VERTICAL   3
+#define AXIS_RIGHT_STICK_HORIZONTAL 2
 
 #define AXIS_LEFT_TRIGGER           2
 #define AXIS_RIGHT_TRIGGER          5
 
-#define AXIS_COUNT 6
+#define AXIS_COUNT                  4
 
 //  Button definitions. Down is 1, up is 0
 #define BUTTON_A            0
@@ -36,8 +36,8 @@
 #define BUTTON_LEFT_CLICK   9
 #define BUTTON_RIGHT_CLICK  10
 
-#define BUTTON_COUNT 11
+#define BUTTON_COUNT        11
 
-#define DEADZONE 20
+#define DEADZONE            0.1f
 
 #endif
