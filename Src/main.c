@@ -148,8 +148,8 @@ int main(void)
 			memcpy(&speed_l, buf_uplevel_decoded + sizeof(uint8_t), sizeof(float));
 			memcpy(&speed_a, buf_uplevel_decoded + sizeof(float), sizeof(float));
 			
-			speed_drv1 = speed_l;		// TODO add math model
-			speed_drv2 = -speed_l;				
+			speed_drv1 = speed_l + speed_a/4;		// TODO add math model
+			speed_drv2 = -speed_l+ speed_a/4;				
 		}
 		 
 		if (uart_drv1_ready == 1)
