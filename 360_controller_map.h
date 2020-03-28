@@ -15,9 +15,14 @@
 // down) and right are positive values
 #define AXIS_LEFT_STICK_VERTICAL    1
 #define AXIS_LEFT_STICK_HORIZONTAL  0
+// pc
+//#define AXIS_RIGHT_STICK_VERTICAL   2
+//#define AXIS_RIGHT_STICK_HORIZONTAL 3
+//--
+//rpi
 #define AXIS_RIGHT_STICK_VERTICAL   3
 #define AXIS_RIGHT_STICK_HORIZONTAL 2
-
+//
 #define AXIS_LEFT_TRIGGER           2
 #define AXIS_RIGHT_TRIGGER          5
 

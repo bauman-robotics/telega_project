@@ -47,6 +47,7 @@ int send_command_cobs(float value1, float value2, int send_port)
 {
     char val_to_send[9];
     char val_cobs_to_send[11];
+    memset(val_cobs_to_send, 0, 11);
     val_to_send[0] = 'u';
     memcpy(val_to_send + sizeof(char), &value1, sizeof(float));
     memcpy(val_to_send + sizeof(char) + sizeof(float), &value2, sizeof(float));
