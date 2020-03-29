@@ -202,7 +202,7 @@ void SysTick_Handler(void)
 	if (counter > 100)
 	{
 		counter = 0;
-		uart_drv_send = 1;
+		//uart_drv_send = 1;
 	}
 
   /* USER CODE END SysTick_IRQn 0 */
@@ -232,11 +232,15 @@ void USART1_IRQHandler(void)
 		buf_uplevel[counter] = USART1->DR;
 		if (buf_uplevel[counter] == 0)
 		{
-			counter  = 0;
-			uart_uplevel_ready = 1;
+			if (counter == 10)
+				uart_uplevel_ready = 1;		
+			counter = 0;
 			return ;
 		}
-		counter++;
+		if (counter < 11)
+			counter++; // BUF_SIZE_UPLEVEL
+		else
+			counter = 0;
 		
 	}
 

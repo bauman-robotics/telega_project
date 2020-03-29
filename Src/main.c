@@ -77,7 +77,12 @@ int uart_uplevel_ready, uart_drv1_ready, uart_drv2_ready;
 int uart_uplevel_send, uart_drv_send;
 
 float	pos_drv1, pos_drv2;
-
+uint32_t count_recieve = 0;
+uint32_t count_send = 0;
+float	speed_l=0.0f;
+float	speed_a=0.0f;
+float speed_drv1 =0.0f;
+float speed_drv2 =0.0f;
 /* USER CODE END 0 */
 
 /**
@@ -122,12 +127,10 @@ int main(void)
 	uint8_t buf_uplevel_decoded[BUF_SIZE_UPLEVEL - 2];
 	uint8_t buf_drv_decoded[BUF_SIZE_DRV - 2];
 	uint8_t buf_drv_send_decoded[BUF_SIZE_DRV_SEND - 2];
-	float	speed_l, speed_a;
-	
-	float speed_drv1, speed_drv2;
+
 	uint8_t code;
-	
-	int DEBUG = 1;
+
+	int DEBUG = 0;
 	if (DEBUG)
 	{
 		
@@ -142,33 +145,45 @@ int main(void)
 	  }
 		if (uart_uplevel_ready == 1)
 		{
+			uart_uplevel_ready = 0;
 			cobs_decode(buf_uplevel, BUF_SIZE_UPLEVEL, buf_uplevel_decoded);
 			
 			code = buf_uplevel_decoded[0];
 			memcpy(&speed_l, buf_uplevel_decoded + sizeof(uint8_t), sizeof(float));
-			memcpy(&speed_a, buf_uplevel_decoded + sizeof(float), sizeof(float));
+			memcpy(&speed_a, buf_uplevel_decoded + sizeof(uint8_t) + sizeof(float), sizeof(float));
+	
+			speed_drv1 = speed_l + speed_a/2;		// TODO add math model
+			speed_drv2 = -speed_l + speed_a/2 ;	
+			if (speed_drv1 > 1.0) speed_drv1 = 1.0;
+			if (speed_drv1 < -1.0) speed_drv1 = -1.0;
+			if (speed_drv2 > 1.0) speed_drv2 = 1.0;
+			if (speed_drv2 < -1.0) speed_drv2 = -1.0;
+						
+			uart_drv_send = 1;
 			
-			speed_drv1 = speed_l + speed_a/4;		// TODO add math model
-			speed_drv2 = -speed_l+ speed_a/4;				
+			if (DEBUG)
+			{
+				count_recieve ++;
+			}
 		}
 		 
-		if (uart_drv1_ready == 1)
-		{
-			cobs_decode(buf_drv1, BUF_SIZE_DRV, buf_drv_decoded);
-			memcpy(&pos_drv1, buf_drv_decoded, sizeof(float));
-		
-			// TODO add math model
-			cobs_encode(buf_drv_decoded, sizeof(float), buf_drv1);
-			HAL_UART_Transmit(&huart1, buf_drv1, BUF_SIZE_DRV, 0x0FFF);
-		}
+//		if (uart_drv1_ready == 1)
+//		{
+//			cobs_decode(buf_drv1, BUF_SIZE_DRV, buf_drv_decoded);
+//			memcpy(&pos_drv1, buf_drv_decoded, sizeof(float));
+//		
+//			// TODO add math model
+//			cobs_encode(buf_drv_decoded, sizeof(float), buf_drv1);
+//			HAL_UART_Transmit(&huart1, buf_drv1, BUF_SIZE_DRV, 0x0FFF);
+//		}
 
-		if (uart_drv2_ready == 1)
-		{
-			cobs_decode(buf_drv2, BUF_SIZE_DRV, buf_drv_decoded);
-			memcpy(&pos_drv2, buf_drv_decoded, sizeof(float));
-			
-			HAL_UART_Transmit(&huart1, buf_drv2, BUF_SIZE_DRV, 0x0FFF);
-		}
+//		if (uart_drv2_ready == 1)
+//		{
+//			cobs_decode(buf_drv2, BUF_SIZE_DRV, buf_drv_decoded);
+//			memcpy(&pos_drv2, buf_drv_decoded, sizeof(float));
+//			
+//			HAL_UART_Transmit(&huart1, buf_drv2, BUF_SIZE_DRV, 0x0FFF);
+//		}
 		
 		if (uart_drv_send)
 		{
@@ -183,7 +198,7 @@ int main(void)
 			memcpy(buf_drv_send_decoded + 1, &speed_drv2, sizeof(float));
 			cobs_encode(buf_drv_send_decoded, BUF_SIZE_DRV_SEND - 2, buf_drv_send);
 			HAL_UART_Transmit(&huart3, buf_drv_send, BUF_SIZE_DRV_SEND, 0x0FFF);
-			
+			count_send ++;
 		}
 		/* USER CODE END WHILE */
 
