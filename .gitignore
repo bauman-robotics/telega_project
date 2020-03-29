@@ -1,0 +1,11 @@
+/.vscode/*
+/Objects/*
+/DebugConfig/*
+/Listings/*
+
+*.scvd
+*.uvopt
+*.uvoptx
+*.uvgui
+*.uvgui.*
+*.uvguix.*
