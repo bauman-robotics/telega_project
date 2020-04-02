@@ -73,16 +73,29 @@ uint8_t buf_uplevel[BUF_SIZE_UPLEVEL];			// uint8_t code + float (angle_speed + 
 uint8_t buf_drv1[BUF_SIZE_DRV];							// float speed
 uint8_t buf_drv2[BUF_SIZE_DRV];							// float speed
 uint8_t buf_drv_send[BUF_SIZE_DRV_SEND];					// uint8_t code + float speed
-int uart_uplevel_ready, uart_drv1_ready, uart_drv2_ready;
-int uart_uplevel_send, uart_drv_send;
+
+uint8_t buf_to_uplevel[BUF_SIZE_UPLEVEL-2];					//		uint8_t code + float (angle_speed + linear_speed)
+uint8_t buf_to_uplevel_send[BUF_SIZE_UPLEVEL];					// uint8_t code + float (angle_speed + linear_speed): 9 databyte + 2 byte overhead
+
+int uart_uplevel_ready, uart_to_uplevel_ready, uart_drv1_ready, uart_drv2_ready;
+int uart_uplevel_send, uart_to_uplevel_send, uart_drv_send;
 
 float	pos_drv1, pos_drv2;
 uint32_t count_recieve = 0;
 uint32_t count_send = 0;
-float	speed_l=0.0f;
-float	speed_a=0.0f;
+float	speed_l= 0.0f;
+float	speed_a= 0.0f;
+float	speed_l_up = 0.0f;
+float	speed_a_up = 0.0f;
 float speed_drv1 =0.0f;
 float speed_drv2 =0.0f;
+float path_of_1 = 0.0f;
+float path_of_2 = 0.0f;
+
+const float width_platform = 1.0f;  // need precise width, in meters
+const float wheel_radius = 0.05f;  // need precise radius, in meters
+
+
 /* USER CODE END 0 */
 
 /**
@@ -145,15 +158,16 @@ int main(void)
 	  }
 		if (uart_uplevel_ready == 1)
 		{
-			uart_uplevel_ready = 0;
+			uart_uplevel_ready = 0; 
 			cobs_decode(buf_uplevel, BUF_SIZE_UPLEVEL, buf_uplevel_decoded);
 			
 			code = buf_uplevel_decoded[0];
 			memcpy(&speed_l, buf_uplevel_decoded + sizeof(uint8_t), sizeof(float));
 			memcpy(&speed_a, buf_uplevel_decoded + sizeof(uint8_t) + sizeof(float), sizeof(float));
 	
-			speed_drv1 = speed_l + speed_a/2;		// TODO add math model
-			speed_drv2 = -speed_l + speed_a/2 ;	
+			speed_drv1 = (2*speed_l - speed_a*width_platform)/(2*wheel_radius);
+			speed_drv2 = (2*speed_l + speed_a*width_platform)/(2*wheel_radius);			
+			
 			if (speed_drv1 > 1.0) speed_drv1 = 1.0;
 			if (speed_drv1 < -1.0) speed_drv1 = -1.0;
 			if (speed_drv2 > 1.0) speed_drv2 = 1.0;
@@ -167,23 +181,46 @@ int main(void)
 			}
 		}
 		 
-//		if (uart_drv1_ready == 1)
-//		{
-//			cobs_decode(buf_drv1, BUF_SIZE_DRV, buf_drv_decoded);
-//			memcpy(&pos_drv1, buf_drv_decoded, sizeof(float));
-//		
-//			// TODO add math model
-//			cobs_encode(buf_drv_decoded, sizeof(float), buf_drv1);
-//			HAL_UART_Transmit(&huart1, buf_drv1, BUF_SIZE_DRV, 0x0FFF);
-//		}
+		if (uart_drv1_ready == 1 && uart_drv2_ready == 1)
+		{
+			uart_drv1_ready = 0;
+			uart_drv2_ready = 0;						
+			
+			speed_a_up = (speed_drv2 - speed_drv1)*wheel_radius/width_platform;
+			speed_l_up = (speed_drv1 + speed_drv2)*wheel_radius/2;
+			
+			buf_to_uplevel[0] = 'v';
+			memcpy(buf_to_uplevel + 1, &speed_a_up, sizeof(float));
+			memcpy(buf_to_uplevel + 5, &speed_l_up, sizeof(float));
+			cobs_encode(buf_to_uplevel, BUF_SIZE_UPLEVEL - 2, buf_to_uplevel_send);			
+			HAL_UART_Transmit(&huart1, buf_to_uplevel_send, BUF_SIZE_UPLEVEL, 0x0FFF);
+			 
+			buf_to_uplevel[0] = 'o';
+			memcpy(buf_to_uplevel + 1, &path_of_1, sizeof(float));
+			memcpy(buf_to_uplevel + 5, &path_of_2, sizeof(float));
+			cobs_encode(buf_to_uplevel, BUF_SIZE_UPLEVEL - 2, buf_to_uplevel_send);			
+			HAL_UART_Transmit(&huart1, buf_to_uplevel_send, BUF_SIZE_UPLEVEL, 0x0FFF);
+		}
+		
+		if (uart_drv1_ready == 1)
+		{
+			cobs_decode(buf_drv1, BUF_SIZE_DRV, buf_drv_decoded);
+			memcpy(&pos_drv1, buf_drv_decoded, sizeof(float));
+			path_of_1 += pos_drv1*wheel_radius;
+		
+			// TODO add math model
+			//cobs_encode(buf_drv_decoded, sizeof(float), buf_drv1);
+			//HAL_UART_Transmit(&huart1, buf_drv1, BUF_SIZE_DRV, 0x0FFF);
+		}
 
-//		if (uart_drv2_ready == 1)
-//		{
-//			cobs_decode(buf_drv2, BUF_SIZE_DRV, buf_drv_decoded);
-//			memcpy(&pos_drv2, buf_drv_decoded, sizeof(float));
-//			
-//			HAL_UART_Transmit(&huart1, buf_drv2, BUF_SIZE_DRV, 0x0FFF);
-//		}
+		if (uart_drv2_ready == 1)
+		{
+			cobs_decode(buf_drv2, BUF_SIZE_DRV, buf_drv_decoded);
+			memcpy(&pos_drv2, buf_drv_decoded, sizeof(float));		
+			path_of_2 += pos_drv2*wheel_radius;
+			
+			//HAL_UART_Transmit(&huart1, buf_drv2, BUF_SIZE_DRV, 0x0FFF);
+		}
 		
 		if (uart_drv_send)
 		{
@@ -348,7 +385,7 @@ static void MX_USART3_UART_Init(void)
   * @param None
   * @retval None
   */
-static void MX_GPIO_Init(void)
+static void MX_GPIO_Init(void)   
 {
   GPIO_InitTypeDef GPIO_InitStruct = {0};
 

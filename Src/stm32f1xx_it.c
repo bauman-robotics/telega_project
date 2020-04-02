@@ -240,8 +240,7 @@ void USART1_IRQHandler(void)
 		if (counter < 11)
 			counter++; // BUF_SIZE_UPLEVEL
 		else
-			counter = 0;
-		
+			counter = 0;	
 	}
 
   /* USER CODE END USART1_IRQn 0 */
