@@ -40,8 +40,8 @@ size_t cobs_encode(const uint8_t * input, size_t length_input, uint8_t * output)
         }
     }
 
-    output[code_index] = code;
-
+    output[code_index++] = code;
+    // output[code_index] = 0;
     return write_index;
 }
 

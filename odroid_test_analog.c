@@ -167,8 +167,9 @@ int update_button(int button, int button_state, int send_port, int receive_port)
             if(button_state == 1)
             {
                 value = 0;
-                printf("Opening claw.\n");
-                send_command(&flag, &value, send_port);//do Y button pressed thing
+                printf("STOP &_Opening claw.\n");
+               // send_command(&flag, &value, send_port);//do Y button pressed thing
+               // send_command_cobs(0, 0, send_port);
             }
 			break;
         case BUTTON_BACK:
@@ -302,27 +303,31 @@ int main(int argc, char *argv[])
     int counter = 0;
 	while (1) {
 		received = read_joystick_event(&jse); // check for a joystick update
-		counter++;
-		if (counter == 10){
-		    counter = 0;
-            if (received == 1) { // if an update is available
-                switch(jse.type)
-                {
-                    case TYPE_BUTTON:
-                        //printf("NOT_BUTTON\n");
-                        button_update(&jse, new_button_values); // update teh new button array
-                        break;
-                    case TYPE_NOT_BUTTON:
-                        //printf("BUTTON\n");
-                        axis_update(&jse, new_axis_values); // udpate the new axis values array
-                        break;
-                }
+        if (received == 1) { // if an update is available
+            printf("receive: %hhu, %d, %d\n", jse.type, jse.value, jse.number);
+            switch(jse.type)
+            {
+                case TYPE_BUTTON:
+                    //printf("NOT_BUTTON\n");
+                    button_update(&jse, new_button_values); // update teh new button array
+                    break;
+                case TYPE_NOT_BUTTON:
+                    //printf("BUTTON\n");
+                    axis_update(&jse, new_axis_values); // udpate the new axis values array
+                    break;
             }
+        }
+        counter++;
+        if (counter == 10)
+        {
+            counter = 0;
             send_button_updates(old_button_values, new_button_values, send_port, receive_port); // checks bot the old and new button arrays for differences, if it finds one then an update is sent
             send_axis_updates(old_axis_values, new_axis_values, send_port); // ditto from above
 		}
 
 		usleep(1000);
+
 	}
 }
+
 
