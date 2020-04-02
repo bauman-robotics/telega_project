@@ -20,6 +20,6 @@
 "telega\stm32f1xx_hal_exti.o"
 "telega\system_stm32f1xx.o"
 --library_type=microlib --strict --scatter "telega\telega.sct"
---summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list "telega.map" -o telega\telega.axf
