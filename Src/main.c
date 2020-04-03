@@ -83,6 +83,8 @@ int uart_uplevel_send, uart_to_uplevel_send, uart_drv_send;
 float	pos_drv1, pos_drv2;
 uint32_t count_recieve = 0;
 uint32_t count_send = 0;
+uint32_t t0_1 = 0;
+uint32_t t0_2 = 0;
 float	speed_l= 0.0f;
 float	speed_a= 0.0f;
 float	speed_l_up = 0.0f;
@@ -91,6 +93,12 @@ float speed_drv1 =0.0f;
 float speed_drv2 =0.0f;
 float path_of_1 = 0.0f;
 float path_of_2 = 0.0f;
+double phi = 0.0f;
+double delta_phi = 0.0;  //azimuth increment
+double delta_x = 0.0;		 //x coord increment
+double delta_y = 0.0;    //y coord increment
+double x = 0.0;		 //x coord 
+double y = 0.0;    //y coord 
 
 const float width_platform = 1.0f;  // need precise width, in meters
 const float wheel_radius = 0.05f;  // need precise radius, in meters
@@ -166,7 +174,7 @@ int main(void)
 			memcpy(&speed_a, buf_uplevel_decoded + sizeof(uint8_t) + sizeof(float), sizeof(float));
 	
 			speed_drv1 = (2*speed_l - speed_a*width_platform)/(2*wheel_radius);
-			speed_drv2 = (2*speed_l + speed_a*width_platform)/(2*wheel_radius);			
+			speed_drv2 = (2*speed_l + speed_a*width_platform)/(2*wheel_radius);		
 			
 			if (speed_drv1 > 1.0) speed_drv1 = 1.0;
 			if (speed_drv1 < -1.0) speed_drv1 = -1.0;
@@ -182,10 +190,10 @@ int main(void)
 		}
 		 
 		if (uart_drv1_ready == 1 && uart_drv2_ready == 1)
-		{
+		{								
 			uart_drv1_ready = 0;
 			uart_drv2_ready = 0;						
-			
+
 			speed_a_up = (speed_drv2 - speed_drv1)*wheel_radius/width_platform;
 			speed_l_up = (speed_drv1 + speed_drv2)*wheel_radius/2;
 			
@@ -199,7 +207,37 @@ int main(void)
 			memcpy(buf_to_uplevel + 1, &path_of_1, sizeof(float));
 			memcpy(buf_to_uplevel + 5, &path_of_2, sizeof(float));
 			cobs_encode(buf_to_uplevel, BUF_SIZE_UPLEVEL - 2, buf_to_uplevel_send);			
-			HAL_UART_Transmit(&huart1, buf_to_uplevel_send, BUF_SIZE_UPLEVEL, 0x0FFF);
+			HAL_UART_Transmit(&huart1, buf_to_uplevel_send, BUF_SIZE_UPLEVEL, 0x0FFF); 
+				
+			/*		//may be too slow																															
+			
+			delta_phi = (HAL_GetTick() -  t0_1)*speed_a_up;
+			phi += delta_phi;
+			
+			buf_to_uplevel[0] = 'p';
+			memcpy(buf_to_uplevel + 1, &phi, sizeof(double));
+			cobs_encode(buf_to_uplevel, BUF_SIZE_UPLEVEL - 2, buf_to_uplevel_send);			
+			HAL_UART_Transmit(&huart1, buf_to_uplevel_send, BUF_SIZE_UPLEVEL, 0x0FFF); 
+			
+			delta_x = (HAL_GetTick() -  t0_1)*speed_l_up*cos(phi);
+			x += delta_x;
+			
+			buf_to_uplevel[0] = 'x';
+			memcpy(buf_to_uplevel + 1, &x, sizeof(double));
+			cobs_encode(buf_to_uplevel, BUF_SIZE_UPLEVEL - 2, buf_to_uplevel_send);			
+			HAL_UART_Transmit(&huart1, buf_to_uplevel_send, BUF_SIZE_UPLEVEL, 0x0FFF); 
+			
+			delta_y = (HAL_GetTick() -  t0_1)*speed_l_up*sin(phi);
+			y += delta_y;
+			
+			buf_to_uplevel[0] = 'y';
+			memcpy(buf_to_uplevel + 1, &y, sizeof(double));
+			cobs_encode(buf_to_uplevel, BUF_SIZE_UPLEVEL - 2, buf_to_uplevel_send);			
+			HAL_UART_Transmit(&huart1, buf_to_uplevel_send, BUF_SIZE_UPLEVEL, 0x0FFF); 
+			
+			t0_1 = HAL_GetTick() ;
+			
+			*/
 		}
 		
 		if (uart_drv1_ready == 1)
