@@ -2,7 +2,13 @@
 #include "ui_mainwindow.h"
 //#include "counter.h"
 #include <QDebug>
-#include "windows.h"
+
+#ifdef _WIN32
+#include <Windows.h>
+#else
+#include <unistd.h>
+#endif
+
 #include <QSerialPortInfo>
 #include <QDebug>
 #include <QMessageBox>
@@ -206,7 +212,7 @@ void MainWindow::serialDataReceived()
   }
   //x=x+10;
 
-  //DataReady = FALSE;
+  //DataReady = false;
 
 }
 
@@ -352,10 +358,10 @@ void MainWindow::on_pushButton_Set_angle_clicked()
     case smooth_move:           // плавный режим, старт-сигнал
 
         command_code = 'v';
-        SmoothStartSignal = TRUE;
-        FuncStartSignal = FALSE;
-        SmoothAutonomousEnabled = FALSE;
-        PathModeEnabled = FALSE;
+        SmoothStartSignal = true;
+        FuncStartSignal = false;
+        SmoothAutonomousEnabled = false;
+        PathModeEnabled = false;
         emit EmitSmoothStartSignal(SmoothStartSignal);
         emit EmitFuncStartSignal(FuncStartSignal);
         qDebug() << "EmitSmoothStartSignalTRUE";
@@ -363,13 +369,13 @@ void MainWindow::on_pushButton_Set_angle_clicked()
 
     case smooth_move_autonomous:
 
-        SmoothStartSignal = FALSE;
-        FuncStartSignal = FALSE;
-        SmoothAutonomousEnabled = TRUE;
-        PathModeEnabled = FALSE;
+        SmoothStartSignal = false;
+        FuncStartSignal = false;
+        SmoothAutonomousEnabled = true;
+        PathModeEnabled = false;
         emit EmitSmoothStartSignal(SmoothStartSignal);
         emit EmitFuncStartSignal(FuncStartSignal);
-        qDebug() << "Autonomous Smooth Start TRUE";
+        qDebug() << "Autonomous Smooth Start true";
 
          StringVar = ui->Write_Desired_Time->toPlainText();
          DataTmp  = StringVar.toFloat();
@@ -385,10 +391,10 @@ void MainWindow::on_pushButton_Set_angle_clicked()
 
     case func_move:    // функциональный режим, старт-сигнал
 
-        FuncStartSignal = TRUE;
-        SmoothStartSignal = FALSE;
-        SmoothAutonomousEnabled = FALSE;
-        PathModeEnabled = FALSE;
+        FuncStartSignal = true;
+        SmoothStartSignal = false;
+        SmoothAutonomousEnabled = false;
+        PathModeEnabled = false;
         emit EmitFuncStartSignal(FuncStartSignal);
         emit EmitSmoothStartSignal(SmoothStartSignal);
         qDebug() << "EmitFuncStartSignalTRUE";
@@ -398,10 +404,10 @@ void MainWindow::on_pushButton_Set_angle_clicked()
     case path_mode:
 
         command_code = 'v';
-        SmoothStartSignal = FALSE;
-        FuncStartSignal = FALSE;
-        SmoothAutonomousEnabled = FALSE;
-        PathModeEnabled = TRUE;
+        SmoothStartSignal = false;
+        FuncStartSignal = false;
+        SmoothAutonomousEnabled = false;
+        PathModeEnabled = true;
         emit EmitSmoothStartSignal(SmoothStartSignal);
         emit EmitFuncStartSignal(FuncStartSignal);
 
@@ -428,10 +434,10 @@ void MainWindow::on_pushButton_Set_angle_clicked()
 
     if (MainWindow::SmoothAutonomousEnabled == false && MainWindow::FuncModeEnabled == false && MainWindow::SmoothModeEnabled == false && MainWindow::PathModeEnabled == false)
     {
-        SmoothStartSignal = FALSE;
-        FuncStartSignal = FALSE;
-        SmoothAutonomousEnabled = FALSE;
-        PathModeEnabled = FALSE;
+        SmoothStartSignal = false;
+        FuncStartSignal = false;
+        SmoothAutonomousEnabled = false;
+        PathModeEnabled = false;
         emit EmitSmoothStartSignal(SmoothStartSignal);
         emit EmitFuncStartSignal(FuncStartSignal);
         qDebug() << "EmitStartSignalFALSE";
@@ -465,10 +471,10 @@ void MainWindow::on_pushButton_Set_angle_2_clicked()
     case smooth_move:           // плавный режим, старт-сигнал
 
         command_code = 'v';
-        SmoothStartSignal = TRUE;
-        FuncStartSignal = FALSE;
-        SmoothAutonomousEnabled = FALSE;
-        PathModeEnabled = FALSE;
+        SmoothStartSignal = true;
+        FuncStartSignal = false;
+        SmoothAutonomousEnabled = false;
+        PathModeEnabled = false;
         emit EmitSmoothStartSignal(SmoothStartSignal);
         emit EmitFuncStartSignal(FuncStartSignal);
         qDebug() << "EmitSmoothStartSignalTRUE";
@@ -476,13 +482,13 @@ void MainWindow::on_pushButton_Set_angle_2_clicked()
 
     case smooth_move_autonomous:
 
-        SmoothStartSignal = FALSE;
-        FuncStartSignal = FALSE;
-        SmoothAutonomousEnabled = TRUE;
-        PathModeEnabled = FALSE;
+        SmoothStartSignal = false;
+        FuncStartSignal = false;
+        SmoothAutonomousEnabled = true;
+        PathModeEnabled = false;
         emit EmitSmoothStartSignal(SmoothStartSignal);
         emit EmitFuncStartSignal(FuncStartSignal);
-        qDebug() << "Autonomous Smooth Start TRUE";
+        qDebug() << "Autonomous Smooth Start true";
 
          StringVar = ui->Write_Desired_Time->toPlainText();
          DataTmp  = StringVar.toFloat();
@@ -498,10 +504,10 @@ void MainWindow::on_pushButton_Set_angle_2_clicked()
 
     case func_move:    // функциональный режим, старт-сигнал
 
-        FuncStartSignal = TRUE;
-        SmoothStartSignal = FALSE;
-        SmoothAutonomousEnabled = FALSE;
-        PathModeEnabled = FALSE;
+        FuncStartSignal = true;
+        SmoothStartSignal = false;
+        SmoothAutonomousEnabled = false;
+        PathModeEnabled = false;
         emit EmitFuncStartSignal(FuncStartSignal);
         emit EmitSmoothStartSignal(SmoothStartSignal);
         qDebug() << "EmitFuncStartSignalTRUE";
@@ -511,10 +517,10 @@ void MainWindow::on_pushButton_Set_angle_2_clicked()
     case path_mode:
 
         command_code = 'v';
-        SmoothStartSignal = FALSE;
-        FuncStartSignal = FALSE;
-        SmoothAutonomousEnabled = FALSE;
-        PathModeEnabled = TRUE;
+        SmoothStartSignal = false;
+        FuncStartSignal = false;
+        SmoothAutonomousEnabled = false;
+        PathModeEnabled = true;
         emit EmitSmoothStartSignal(SmoothStartSignal);
         emit EmitFuncStartSignal(FuncStartSignal);
 
@@ -541,10 +547,10 @@ void MainWindow::on_pushButton_Set_angle_2_clicked()
 
     if (MainWindow::SmoothAutonomousEnabled == false && MainWindow::FuncModeEnabled == false && MainWindow::SmoothModeEnabled == false && MainWindow::PathModeEnabled == false)
     {
-        SmoothStartSignal = FALSE;
-        FuncStartSignal = FALSE;
-        SmoothAutonomousEnabled = FALSE;
-        PathModeEnabled = FALSE;
+        SmoothStartSignal = false;
+        FuncStartSignal = false;
+        SmoothAutonomousEnabled = false;
+        PathModeEnabled = false;
         emit EmitSmoothStartSignal(SmoothStartSignal);
         emit EmitFuncStartSignal(FuncStartSignal);
         qDebug() << "EmitStartSignalFALSE";
@@ -559,10 +565,10 @@ void MainWindow::on_pushButton_Set_angle_2_clicked()
 void MainWindow::on_radioButton_SmoothMode_clicked()
 {
     state = smooth_move;
-    SmoothStartSignal = TRUE;
-    FuncStartSignal = FALSE;
-    SmoothAutonomousEnabled = FALSE;
-    PathModeEnabled = FALSE;
+    SmoothStartSignal = true;
+    FuncStartSignal = false;
+    SmoothAutonomousEnabled = false;
+    PathModeEnabled = false;
     emit EmitSmoothStartSignal(SmoothStartSignal);
     qDebug() << "EmitSmoothStartSignalTRUE";
 }
@@ -570,10 +576,10 @@ void MainWindow::on_radioButton_SmoothMode_clicked()
 void MainWindow::on_radioButton_TrajectoryMode_clicked()
 {
     state = func_move;
-    FuncStartSignal = TRUE;
-    SmoothStartSignal = FALSE;
-    SmoothAutonomousEnabled = FALSE;
-    PathModeEnabled = FALSE;
+    FuncStartSignal = true;
+    SmoothStartSignal = false;
+    SmoothAutonomousEnabled = false;
+    PathModeEnabled = false;
     emit EmitFuncStartSignal(FuncStartSignal);
     qDebug() << "EmitFuncStartSignalTRUE";
 }
@@ -583,7 +589,7 @@ void MainWindow::on_SmoothModeEnabled_clicked()
 {
     state = smooth_move;
      MainWindow::SmoothModeEnabled = true;
-     MainWindow::FuncModeEnabled = FALSE;
+     MainWindow::FuncModeEnabled = false;
      ui->SmoothModeDisabled->setEnabled(true);
      ui->SmoothModeEnabled->setDisabled(true);
 }
@@ -600,8 +606,8 @@ void MainWindow::on_SmoothModeDisabled_clicked()
 void MainWindow::on_FuncModeEnabled_clicked()
 {
     state = func_move;
-    MainWindow::FuncModeEnabled = TRUE;
-    MainWindow::SmoothModeEnabled = FALSE;
+    MainWindow::FuncModeEnabled = true;
+    MainWindow::SmoothModeEnabled = false;
     ui->FuncModeDisabled->setEnabled(true);
     ui->FuncModeEnabled->setDisabled(true);
 
@@ -610,7 +616,7 @@ void MainWindow::on_FuncModeEnabled_clicked()
 void MainWindow::on_FuncModeDisabled_clicked()
 {
     state = disabled;
-     MainWindow::FuncModeEnabled = FALSE;
+     MainWindow::FuncModeEnabled = false;
      ui->FuncModeEnabled->setEnabled(true);
      ui->FuncModeDisabled->setDisabled(true);
 
@@ -619,7 +625,7 @@ void MainWindow::on_FuncModeDisabled_clicked()
 void MainWindow::on_SmoothAutonomousEnabled_clicked()
 {
     state = smooth_move_autonomous;
-    SmoothAutonomousEnabled = TRUE;
+    SmoothAutonomousEnabled = true;
     ui->SmoothAutonomousDisabled->setEnabled(true);
     ui->SmoothAutonomousEnabled->setDisabled(true);
 }
@@ -628,7 +634,7 @@ void MainWindow::on_SmoothAutonomousEnabled_clicked()
 void MainWindow::on_SmoothAutonomousDisabled_clicked()
 {
     state = disabled;
-    SmoothAutonomousEnabled = FALSE;
+    SmoothAutonomousEnabled = false;
     ui->SmoothAutonomousEnabled->setEnabled(true);
     ui->SmoothAutonomousDisabled->setDisabled(true);
 }
@@ -653,7 +659,7 @@ void MainWindow::on_Set_Angular_vel_clicked()
 void MainWindow::on_PathModeEnabled_clicked()
 {
     state = path_mode;
-    PathModeEnabled = TRUE;
+    PathModeEnabled = true;
     ui->PathModeEnabled->setDisabled(true);
     ui->PathModeDisabled->setEnabled(true);
 }
@@ -661,7 +667,7 @@ void MainWindow::on_PathModeEnabled_clicked()
 void MainWindow::on_PathModeDisabled_clicked()
 {
     state = disabled;
-    PathModeEnabled = FALSE;
+    PathModeEnabled = false;
     ui->PathModeEnabled->setEnabled(true);
     ui->PathModeDisabled->setDisabled(true);
 }
@@ -675,11 +681,11 @@ void MainWindow::on_radioButton_SmoothMode_Autonomous_clicked()
     float DataTime;
     float DataDesiredVelocity;
 
-    SmoothStartSignal = FALSE;
-    FuncStartSignal = FALSE;
-    SmoothAutonomousEnabled = TRUE;
-    PathModeEnabled = FALSE;
-    qDebug() << "Autonomous Smooth Start TRUE";
+    SmoothStartSignal = false;
+    FuncStartSignal = false;
+    SmoothAutonomousEnabled = true;
+    PathModeEnabled = false;
+    qDebug() << "Autonomous Smooth Start true";
 
      StringVar = ui->Write_Desired_Time->toPlainText();
      DataTime  = StringVar.toFloat();
@@ -695,10 +701,10 @@ void MainWindow::on_radioButton_SmoothMode_Autonomous_clicked()
 void MainWindow::on_radioButton_path_mode_Autonomous_clicked()
 {
     state = path_mode;
-    SmoothStartSignal = FALSE;
-    FuncStartSignal = FALSE;
-    SmoothAutonomousEnabled = FALSE;
-    PathModeEnabled = TRUE;
+    SmoothStartSignal = false;
+    FuncStartSignal = false;
+    SmoothAutonomousEnabled = false;
+    PathModeEnabled = true;
 }
 
 void MainWindow::on_radioButton_TrajectoryMode_Autonomous_clicked()
@@ -1011,7 +1017,7 @@ void MainWindow::on_savePlotToFile_clicked()
     } // comment end
 
     // UploadToCsv(encoderPosChart,fileName); // need. original
-    ui->pushButtonResetPlot->setDisabled(FALSE);
+    ui->pushButtonResetPlot->setDisabled(false);
 }
 
 
@@ -1054,7 +1060,7 @@ void MainWindow::on_pushButtonStartSaveToFile_clicked()
     // encoderPosPointsArr->clear();
     //flag_show_plot = 0;
     //yMin = yMax = 0;
-    //ui->pushButtonResetPlot->setDisabled(TRUE);
+    //ui->pushButtonResetPlot->setDisabled(true);
     save_to_file_enabled = true;
     series_vec.clear();
     //plot_enabled = false;
@@ -1236,7 +1242,7 @@ void MainWindow::ReceiveFuncCount(int GetCount)
                 SendBytesFloat(command_code, data);
                 ui->horizontalSlider->setValue((int)(data*10000));
                 qDebug() << "data" << data;
-                if (FuncModeEnabled==FALSE) {StopNow(data, command_code);}
+                if (FuncModeEnabled==false) {StopNow(data, command_code);}
                 break;
              }
              else if (j==8 && t[1]==0 ) {
@@ -1249,7 +1255,7 @@ void MainWindow::ReceiveFuncCount(int GetCount)
                 SendBytesFloat(command_code, data);
                 ui->horizontalSlider->setValue((int)(data*10000));
                 qDebug() << "data" << data;
-                if (FuncModeEnabled==FALSE) {StopNow(data, command_code);}
+                if (FuncModeEnabled==false) {StopNow(data, command_code);}
                 break;
              }
 
@@ -1263,7 +1269,7 @@ void MainWindow::ReceiveFuncCount(int GetCount)
                 SendBytesFloat(command_code, data);
                 ui->horizontalSlider->setValue((int)(data*10000));
                 qDebug() << "data" << data;
-                if (FuncModeEnabled==FALSE) {StopNow(data, command_code);}
+                if (FuncModeEnabled==false) {StopNow(data, command_code);}
                 break;
              }
 
@@ -1302,7 +1308,7 @@ void MainWindow::GetCounter(int counter)
     ChartTimeCount+=0.1;
     //port_test->readyRead();
    // qDebug() << "GetCounter";
-    //if ( DataReady == TRUE ){
+    //if ( DataReady == true ){
       //  qDebug() << "ready";
     serialDataReceived();
 //}
@@ -1313,7 +1319,7 @@ void MainWindow::serialDataReady()
 {
 
     //qDebug() << "GetReady";
-    //DataReady = TRUE;
+    //DataReady = true;
 
     //return *ui;
 }
