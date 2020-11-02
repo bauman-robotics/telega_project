@@ -8,6 +8,8 @@
 #include "sensors.h"
 #include "cobs.h"
 
+int enable_writing = 0;
+
 long map(long x, long in_min, long in_max, long out_min, long out_max)
 {
   return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
@@ -22,13 +24,11 @@ float map_stick(short input)
 void button_update(struct js_event *jse, int *button_update_array)
 {
 	button_update_array[jse->number] = jse->value;
-	return;
 }
 
 void axis_update(struct js_event *jse, int *axis_update_array)
 {
 	axis_update_array[jse->number] = jse->value;
-	return; 
 }
 
 int  send_button_updates(int *old_button_array, int *new_button_array, int send_port, int receive_port)
@@ -74,12 +74,18 @@ int  send_axis_updates(int *old_axis_array, int *new_axis_array, int send_port)
         {
             float axis1, axis2;
             axis1 = map_stick(new_axis_array[AXIS_LEFT_STICK_VERTICAL]);
-            axis2 = map_stick(new_axis_array[AXIS_RIGHT_STICK_HORIZONTAL]);
+            axis2 = -map_stick(new_axis_array[AXIS_RIGHT_STICK_HORIZONTAL]);
             //keeps stuff in the deadzone from being sent.
             if(axis1 < DEADZONE && axis1 > -DEADZONE)
                 axis1 = 0.0f;
             if(axis2 < DEADZONE && axis2 > -DEADZONE)
                 axis2 = 0.0f;
+        if(enable_writing == 1)
+        {
+            FILE * way_file = fopen("way", "a");
+            fprintf(way_file,"%f*%f\n", axis1, axis2);
+            fclose(way_file);
+        }
             printf("linear speed: %f, angular speed: %f\n", axis1, axis2);
             send_command_cobs(axis1, axis2, send_port);
         }
@@ -140,8 +146,9 @@ int update_button(int button, int button_state, int send_port, int receive_port)
 			if(button_state == 1)
 			{
                 value = 0;
-                printf("Lowering claw.\n");
-                send_command(&flag, &value, send_port);//do A button pressed thing
+                printf("START WRITING\n");
+                enable_writing = 1;
+                //send_command(&flag, &value, send_port);//do A button pressed thing
             }
 			break;
 		case BUTTON_Y:
@@ -150,7 +157,20 @@ int update_button(int button, int button_state, int send_port, int receive_port)
             {
                 value = 255;
                 printf("Raising claw.\n");
-                send_command(&flag, &value, send_port);//do Y button pressed thing
+                if(enable_writing == 0)
+                {
+                    char data;
+                    FILE * way_file = fopen("way", "r");
+                    fscanf(way_file, "%s", &data);
+                    fclose(way_file);
+                }
+                //send_command(&flag, &value, send_port);//do Y button pressed thing
+                //send_command_cobs(1.0f, 0.0f, send_port);
+            }
+            if(button_state == 0)
+            {
+                value = 127;
+                //send_command_cobs(0.0f, 0.0f, send_port);
             }
 			break;
 		case BUTTON_X:
@@ -167,7 +187,8 @@ int update_button(int button, int button_state, int send_port, int receive_port)
             if(button_state == 1)
             {
                 value = 0;
-                printf("STOP &_Opening claw.\n");
+                printf("STOP WRITING\n");
+                enable_writing = 0;
                // send_command(&flag, &value, send_port);//do Y button pressed thing
                // send_command_cobs(0, 0, send_port);
             }
@@ -274,8 +295,8 @@ int main(int argc, char *argv[])
 	{
 		joy_file = open_joystick(joy_address); // if not specified use js0
 	}
-	
-	if (joy_file < 0) 
+
+	if (joy_file < 0)
 	{
         while(joy_file < 0)
         {
@@ -304,7 +325,8 @@ int main(int argc, char *argv[])
 	while (1) {
 		received = read_joystick_event(&jse); // check for a joystick update
         if (received == 1) { // if an update is available
-            printf("receive: %hhu, %d, %d\n", jse.type, jse.value, jse.number);
+            
+            //printf("receive: %hhu, %d, %d\n", jse.type, jse.value, jse.number);
             switch(jse.type)
             {
                 case TYPE_BUTTON:
@@ -329,5 +351,6 @@ int main(int argc, char *argv[])
 
 	}
 }
+
 
 
