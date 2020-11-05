@@ -1,0 +1,45 @@
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Test executable
+test
+rc_control
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Debug files
+*.dSYM/
+
+*.save
+
+/full_featured_RC
+/CMakeCache.txt
+/cmake_install.cmake
+/full_featured_RC.cbp
+/Makefile
+/CMakeFiles/
