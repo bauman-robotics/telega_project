@@ -2,7 +2,13 @@
 #include "ui_mainwindow.h"
 //#include "counter.h"
 #include <QDebug>
-#include "windows.h"
+
+#ifdef _WIN32
+#include <Windows.h>
+#else
+#include <unistd.h>
+#endif
+
 #include <QSerialPortInfo>
 #include <QDebug>
 #include <QMessageBox>
@@ -41,11 +47,11 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     connect(ui->ConnectBtn, SIGNAL(clicked()), this, SLOT(openConnection()));
     encoderPosPointsArr = new QLineSeries();
-//    encoderPosPointsArr->append(0, 255);
-//    encoderPosPointsArr->append(2, 4);
-//    encoderPosPointsArr->append(3, 8);
-//    encoderPosPointsArr->append(7, 4);
-//    encoderPosPointsArr->append(255, 5);
+    //    encoderPosPointsArr->append(0, 255);
+    //    encoderPosPointsArr->append(2, 4);
+    //    encoderPosPointsArr->append(3, 8);
+    //    encoderPosPointsArr->append(7, 4);
+    //    encoderPosPointsArr->append(255, 5);
 
     encoderPosChart = new QChart();
     encoderPosChart->legend()->hide();
@@ -88,7 +94,6 @@ MainWindow::MainWindow(QWidget *parent) :
      thread->start() ;  // новый поток запущен
 
     // port_test->readyRead();
-
 }
 
 MainWindow::~MainWindow()
@@ -119,104 +124,102 @@ void MainWindow::serialDataReceived()
     data_buffer = port_test->readAll();
     qDebug() << "data_buffer" << data_buffer;
 
-//    if (x==180) x=-180;
-//    data_buffer[0] = 'v';
-//    data_buffer[1] = x;
+    //    if (x==180) x=-180;
+    //    data_buffer[0] = 'v';
+    //    data_buffer[1] = x;
 
-     data_size = data_buffer.size();
-   //  replace = ];
-     //qDebug() << data_buffer.size();
-     uint8_t tmp_mass[254];
-     for (int i = 0; i < data_buffer.size(); i++){
-         quekap.enqueue((uint8_t)data_buffer[i]);
-         //qDebug() << (uint8_t)data_buffer[i];
-         if ((uint8_t)data_buffer[i] == 0){
-             kap = 0;
-             kapla[kap++] = quekap.dequeue();
-             while (kapla[kap-1] != 0){
-                  kapla[kap++] = quekap.dequeue();
-             }
-             kap--;// ноль который был в конце выкинули
-         }
-     }data_buffer.clear();
-  //   qDebug() << "kapla";
-  //   qDebug() << kapla[0];
-  //   qDebug() << kapla[1];
-  //   qDebug() << kapla[2];
-  //   qDebug() << kapla[3];
-  //   qDebug() << kapla[4];
-  //   qDebug() << kapla[5];
-  //   qDebug() << " ";
-     if (kap != 0){
-         a = 1;
-         decodedhigh = 0;
-         c = kapla[0];
-         while (a <= kap) {
-             decoded[decodedhigh++]=kapla[a++];
-             if (--c == 0){
-                 c = decoded[decodedhigh];
-                 decoded[decodedhigh] = 0;
-             }
-         }
-         kap = 0;
-     }
-     decodedhigh--;
-  //   qDebug() << "kapla";
-  //      qDebug() << decoded[0];
-  //      qDebug() << decoded[1];
-  //      qDebug() << decoded[2];
-  //      qDebug() << decoded[3];
-  //      qDebug() << decoded[4];
-  //      qDebug() << decoded[5];
-  //      qDebug() << " ";
-  // теперь любой пакет зашифрованный по тому самому алгоритму расшифрован
-   memcpy(&(fbuf), &decoded[0], 4);
-
-   d_data_buf = fbuf;
-
-  if (plot_enabled) {
-
-      encoderPosPointsArr->append(ChartTimeCount, d_data_buf); // need
-
-      //encoderPosPointsArr->append(plot_count, d_data_buf); // need
-      //encoderPosPointsArr->append(ChartTimeCount, x); // need
-          encoderPosChart->axisX()->setRange(0, ChartTimeCount); //need
-      if(d_data_buf< yMin || d_data_buf > yMax){
-          if(d_data_buf < yMin)
-              yMin = d_data_buf;
-          if(d_data_buf> yMax)
-              yMax = d_data_buf;
-
-           encoderPosChart->axisY()->setRange(yMin-1, yMax+1); //need
-
+    data_size = data_buffer.size();
+    // replace = ];
+    // qDebug() << data_buffer.size();
+    uint8_t tmp_mass[254];
+    for (int i = 0; i < data_buffer.size(); i++) {
+        quekap.enqueue((uint8_t)data_buffer[i]);
+        //qDebug() << (uint8_t)data_buffer[i];
+        if ((uint8_t)data_buffer[i] == 0) {
+            kap = 0;
+            kapla[kap++] = quekap.dequeue();
+            while (kapla[kap - 1] != 0){
+                kapla[kap++] = quekap.dequeue();
+            }
+            kap--;// ноль который был в конце выкинули
         }
-      encoderPosChart->axisX()->setRange(0, ChartTimeCount);  //was
+    }
+    data_buffer.clear();
+    //   qDebug() << "kapla";
+    //   qDebug() << kapla[0];
+    //   qDebug() << kapla[1];
+    //   qDebug() << kapla[2];
+    //   qDebug() << kapla[3];
+    //   qDebug() << kapla[4];
+    //   qDebug() << kapla[5];
+    //   qDebug() << " ";
+    if (kap != 0) {
+        a = 1;
+        decodedhigh = 0;
+        c = kapla[0];
+        while (a <= kap) {
+            decoded[decodedhigh++]=kapla[a++];
+            if (--c == 0){
+                c = decoded[decodedhigh];
+                decoded[decodedhigh] = 0;
+            }
+        }
+        kap = 0;
+    }
+    decodedhigh--;
+    //   qDebug() << "kapla";
+    //      qDebug() << decoded[0];
+    //      qDebug() << decoded[1];
+    //      qDebug() << decoded[2];
+    //      qDebug() << decoded[3];
+    //      qDebug() << decoded[4];
+    //      qDebug() << decoded[5];
+    //      qDebug() << " ";
+    // теперь любой пакет зашифрованный по тому самому алгоритму расшифрован
+    memcpy(&(fbuf), &decoded[0], 4);
 
+    d_data_buf = fbuf;
+
+    if (plot_enabled)
+    {
+
+        encoderPosPointsArr->append(ChartTimeCount, d_data_buf); // need
+
+        //encoderPosPointsArr->append(plot_count, d_data_buf); // need
+        //encoderPosPointsArr->append(ChartTimeCount, x); // need
+        encoderPosChart->axisX()->setRange(0, ChartTimeCount); //need
+        if (d_data_buf< yMin || d_data_buf > yMax) {
+            if(d_data_buf < yMin)
+                yMin = d_data_buf;
+            if(d_data_buf > yMax)
+                yMax = d_data_buf;
+
+             encoderPosChart->axisY()->setRange(yMin - 1, yMax + 1); //need
+        }
+        encoderPosChart->axisX()->setRange(0, ChartTimeCount);  //was
         //plot_count++;
-   }
-  else
-  {
-      ChartTimeCount = 0;
-      qDebug() << "000";
-}
+    }
+    else
+    {
+        ChartTimeCount = 0;
+        qDebug() << "000";
+    }
 
-  if (save_to_file_enabled)
-  {
-     series_vec.push_back(d_data_buf);
-  }
-  //x=x+10;
-
-  //DataReady = FALSE;
-
+    if (save_to_file_enabled)
+    {
+        series_vec.push_back(d_data_buf);
+    }
+    //x=x+10;
+    //DataReady = false;
 }
 
 void MainWindow::openConnection(){
 
-    if(not port_test->isOpen()){
+    if (not port_test->isOpen()) {
         QMessageBox *warn = new QMessageBox();
         warn->setIcon(QMessageBox::Warning);
 
-        if (ui->ListInfoPortsBox->currentText() != ""){
+        if (ui->ListInfoPortsBox->currentText() != "") {
             port_test->setPortName(ui->ListInfoPortsBox->currentText());
         } else {
             warn->setText("Нет доступных портов");
@@ -230,17 +233,17 @@ void MainWindow::openConnection(){
         port_test->setFlowControl(QSerialPort::NoFlowControl);
         port_test->open(QIODevice::ReadWrite);
 
-        if (port_test->isOpen()){
+        if (port_test->isOpen()) {
             ui->ConnectBtn->setText("Connected");
             ui->ConnectBtn->update();
             //warn->setText("Cоединение установлено");
             //warn->show();
-        }else {
+        } else {
             warn->setText("Не удалось установить соединение, возможно порт занят другим процессом");
             warn->show();
         }
     }
-    else{
+    else {
         port_test->close();
         qDebug() << port_test->isOpen();
         ui->ConnectBtn->setText("Disconnected");
@@ -337,7 +340,7 @@ void MainWindow::on_pushButton_Set_angle_clicked()
     float DataTmp;
     float DataDesiredVelocity;
 
-    ui->horizontalSlider->setValue((int)(data*10000));      //да да, это делается через signal
+    ui->horizontalSlider->setValue((int)(data * 10000));      //да да, это делается через signal
 
     switch (state) {
     case position_control:
@@ -352,43 +355,43 @@ void MainWindow::on_pushButton_Set_angle_clicked()
     case smooth_move:           // плавный режим, старт-сигнал
 
         command_code = 'v';
-        SmoothStartSignal = TRUE;
-        FuncStartSignal = FALSE;
-        SmoothAutonomousEnabled = FALSE;
-        PathModeEnabled = FALSE;
+        SmoothStartSignal = true;
+        FuncStartSignal = false;
+        SmoothAutonomousEnabled = false;
+        PathModeEnabled = false;
         emit EmitSmoothStartSignal(SmoothStartSignal);
         emit EmitFuncStartSignal(FuncStartSignal);
         qDebug() << "EmitSmoothStartSignalTRUE";
-         break;
+        break;
 
     case smooth_move_autonomous:
 
-        SmoothStartSignal = FALSE;
-        FuncStartSignal = FALSE;
-        SmoothAutonomousEnabled = TRUE;
-        PathModeEnabled = FALSE;
+        SmoothStartSignal = false;
+        FuncStartSignal = false;
+        SmoothAutonomousEnabled = true;
+        PathModeEnabled = false;
         emit EmitSmoothStartSignal(SmoothStartSignal);
         emit EmitFuncStartSignal(FuncStartSignal);
-        qDebug() << "Autonomous Smooth Start TRUE";
+        qDebug() << "Autonomous Smooth Start true";
 
-         StringVar = ui->Write_Desired_Time->toPlainText();
-         DataTmp  = StringVar.toFloat();
-         StringVar = ui->Write_Desired_Velocity->toPlainText();
+        StringVar = ui->Write_Desired_Time->toPlainText();
+        DataTmp  = StringVar.toFloat();
+        StringVar = ui->Write_Desired_Velocity->toPlainText();
 
-         DataDesiredVelocity  = StringVar.toFloat();
-         if (DataDesiredVelocity > 1 || DataDesiredVelocity < -1)
-         Warner ("Слишком высокая скорость");
-         else
-         SendForSmoothMove('g', DataTmp, DataDesiredVelocity);
+        DataDesiredVelocity  = StringVar.toFloat();
+        if (DataDesiredVelocity > 1 || DataDesiredVelocity < -1)
+        Warner ("Слишком высокая скорость");
+        else
+        SendForSmoothMove('g', DataTmp, DataDesiredVelocity);
         command_code = 'g';
         break;
 
     case func_move:    // функциональный режим, старт-сигнал
 
-        FuncStartSignal = TRUE;
-        SmoothStartSignal = FALSE;
-        SmoothAutonomousEnabled = FALSE;
-        PathModeEnabled = FALSE;
+        FuncStartSignal = true;
+        SmoothStartSignal = false;
+        SmoothAutonomousEnabled = false;
+        PathModeEnabled = false;
         emit EmitFuncStartSignal(FuncStartSignal);
         emit EmitSmoothStartSignal(SmoothStartSignal);
         qDebug() << "EmitFuncStartSignalTRUE";
@@ -398,10 +401,10 @@ void MainWindow::on_pushButton_Set_angle_clicked()
     case path_mode:
 
         command_code = 'v';
-        SmoothStartSignal = FALSE;
-        FuncStartSignal = FALSE;
-        SmoothAutonomousEnabled = FALSE;
-        PathModeEnabled = TRUE;
+        SmoothStartSignal = false;
+        FuncStartSignal = false;
+        SmoothAutonomousEnabled = false;
+        PathModeEnabled = true;
         emit EmitSmoothStartSignal(SmoothStartSignal);
         emit EmitFuncStartSignal(FuncStartSignal);
 
@@ -428,10 +431,10 @@ void MainWindow::on_pushButton_Set_angle_clicked()
 
     if (MainWindow::SmoothAutonomousEnabled == false && MainWindow::FuncModeEnabled == false && MainWindow::SmoothModeEnabled == false && MainWindow::PathModeEnabled == false)
     {
-        SmoothStartSignal = FALSE;
-        FuncStartSignal = FALSE;
-        SmoothAutonomousEnabled = FALSE;
-        PathModeEnabled = FALSE;
+        SmoothStartSignal = false;
+        FuncStartSignal = false;
+        SmoothAutonomousEnabled = false;
+        PathModeEnabled = false;
         emit EmitSmoothStartSignal(SmoothStartSignal);
         emit EmitFuncStartSignal(FuncStartSignal);
         qDebug() << "EmitStartSignalFALSE";
@@ -450,7 +453,7 @@ void MainWindow::on_pushButton_Set_angle_2_clicked()
     float DataTmp;
     float DataDesiredVelocity;
 
-    ui->horizontalSlider->setValue((int)(data*10000));      //да да, это делается через signal
+    ui->horizontalSlider->setValue((int)(data * 10000));      //да да, это делается через signal
 
     switch (state) {
     case position_control:
@@ -465,43 +468,43 @@ void MainWindow::on_pushButton_Set_angle_2_clicked()
     case smooth_move:           // плавный режим, старт-сигнал
 
         command_code = 'v';
-        SmoothStartSignal = TRUE;
-        FuncStartSignal = FALSE;
-        SmoothAutonomousEnabled = FALSE;
-        PathModeEnabled = FALSE;
+        SmoothStartSignal = true;
+        FuncStartSignal = false;
+        SmoothAutonomousEnabled = false;
+        PathModeEnabled = false;
         emit EmitSmoothStartSignal(SmoothStartSignal);
         emit EmitFuncStartSignal(FuncStartSignal);
         qDebug() << "EmitSmoothStartSignalTRUE";
-         break;
+        break;
 
     case smooth_move_autonomous:
 
-        SmoothStartSignal = FALSE;
-        FuncStartSignal = FALSE;
-        SmoothAutonomousEnabled = TRUE;
-        PathModeEnabled = FALSE;
+        SmoothStartSignal = false;
+        FuncStartSignal = false;
+        SmoothAutonomousEnabled = true;
+        PathModeEnabled = false;
         emit EmitSmoothStartSignal(SmoothStartSignal);
         emit EmitFuncStartSignal(FuncStartSignal);
-        qDebug() << "Autonomous Smooth Start TRUE";
+        qDebug() << "Autonomous Smooth Start true";
 
-         StringVar = ui->Write_Desired_Time->toPlainText();
-         DataTmp  = StringVar.toFloat();
-         StringVar = ui->Write_Desired_Velocity->toPlainText();
+        StringVar = ui->Write_Desired_Time->toPlainText();
+        DataTmp  = StringVar.toFloat();
+        StringVar = ui->Write_Desired_Velocity->toPlainText();
 
-         DataDesiredVelocity  = StringVar.toFloat();
-         if (DataDesiredVelocity > 1 || DataDesiredVelocity < -1)
-         Warner ("Слишком высокая скорость");
-         else
-         SendForSmoothMove('g', DataTmp, DataDesiredVelocity);
+        DataDesiredVelocity  = StringVar.toFloat();
+        if (DataDesiredVelocity > 1 || DataDesiredVelocity < -1)
+            Warner ("Слишком высокая скорость");
+        else
+            SendForSmoothMove('g', DataTmp, DataDesiredVelocity);
         command_code = 'g';
         break;
 
     case func_move:    // функциональный режим, старт-сигнал
 
-        FuncStartSignal = TRUE;
-        SmoothStartSignal = FALSE;
-        SmoothAutonomousEnabled = FALSE;
-        PathModeEnabled = FALSE;
+        FuncStartSignal = true;
+        SmoothStartSignal = false;
+        SmoothAutonomousEnabled = false;
+        PathModeEnabled = false;
         emit EmitFuncStartSignal(FuncStartSignal);
         emit EmitSmoothStartSignal(SmoothStartSignal);
         qDebug() << "EmitFuncStartSignalTRUE";
@@ -511,10 +514,10 @@ void MainWindow::on_pushButton_Set_angle_2_clicked()
     case path_mode:
 
         command_code = 'v';
-        SmoothStartSignal = FALSE;
-        FuncStartSignal = FALSE;
-        SmoothAutonomousEnabled = FALSE;
-        PathModeEnabled = TRUE;
+        SmoothStartSignal = false;
+        FuncStartSignal = false;
+        SmoothAutonomousEnabled = false;
+        PathModeEnabled = true;
         emit EmitSmoothStartSignal(SmoothStartSignal);
         emit EmitFuncStartSignal(FuncStartSignal);
 
@@ -523,13 +526,15 @@ void MainWindow::on_pushButton_Set_angle_2_clicked()
 
         if (L_vel > 1.2 || L_vel < -1.2)
             Warner ("Слишком высокая скорость");
-        else SendBytesFloat('L', L_vel);               // отсылаем линейную скорость платформы
+        else
+            SendBytesFloat('L', L_vel);               // отсылаем линейную скорость платформы
 
         StringVar = ui->Write_Angular_vel->toPlainText();
         W_vel  = StringVar.toFloat();
         if (W_vel > 1.2 || W_vel < -1.2)
             Warner ("Слишком высокая скорость");
-        else  SendBytesFloat('W', W_vel);              // отсылаем угловую скорость платформы
+        else
+            SendBytesFloat('W', W_vel);              // отсылаем угловую скорость платформы
         break;
     default:
         command_code = 'e';
@@ -541,17 +546,17 @@ void MainWindow::on_pushButton_Set_angle_2_clicked()
 
     if (MainWindow::SmoothAutonomousEnabled == false && MainWindow::FuncModeEnabled == false && MainWindow::SmoothModeEnabled == false && MainWindow::PathModeEnabled == false)
     {
-        SmoothStartSignal = FALSE;
-        FuncStartSignal = FALSE;
-        SmoothAutonomousEnabled = FALSE;
-        PathModeEnabled = FALSE;
+        SmoothStartSignal = false;
+        FuncStartSignal = false;
+        SmoothAutonomousEnabled = false;
+        PathModeEnabled = false;
         emit EmitSmoothStartSignal(SmoothStartSignal);
         emit EmitFuncStartSignal(FuncStartSignal);
         qDebug() << "EmitStartSignalFALSE";
         qDebug() << "EmitFuncSignalFALSE";
 
-    SendBytesFloat(command_code, data);
-    qDebug() << "data_norm" << data;
+        SendBytesFloat(command_code, data);
+        qDebug() << "data_norm" << data;
     }
 }
 
@@ -559,10 +564,10 @@ void MainWindow::on_pushButton_Set_angle_2_clicked()
 void MainWindow::on_radioButton_SmoothMode_clicked()
 {
     state = smooth_move;
-    SmoothStartSignal = TRUE;
-    FuncStartSignal = FALSE;
-    SmoothAutonomousEnabled = FALSE;
-    PathModeEnabled = FALSE;
+    SmoothStartSignal = true;
+    FuncStartSignal = false;
+    SmoothAutonomousEnabled = false;
+    PathModeEnabled = false;
     emit EmitSmoothStartSignal(SmoothStartSignal);
     qDebug() << "EmitSmoothStartSignalTRUE";
 }
@@ -570,10 +575,10 @@ void MainWindow::on_radioButton_SmoothMode_clicked()
 void MainWindow::on_radioButton_TrajectoryMode_clicked()
 {
     state = func_move;
-    FuncStartSignal = TRUE;
-    SmoothStartSignal = FALSE;
-    SmoothAutonomousEnabled = FALSE;
-    PathModeEnabled = FALSE;
+    FuncStartSignal = true;
+    SmoothStartSignal = false;
+    SmoothAutonomousEnabled = false;
+    PathModeEnabled = false;
     emit EmitFuncStartSignal(FuncStartSignal);
     qDebug() << "EmitFuncStartSignalTRUE";
 }
@@ -582,10 +587,10 @@ void MainWindow::on_radioButton_TrajectoryMode_clicked()
 void MainWindow::on_SmoothModeEnabled_clicked()
 {
     state = smooth_move;
-     MainWindow::SmoothModeEnabled = true;
-     MainWindow::FuncModeEnabled = FALSE;
-     ui->SmoothModeDisabled->setEnabled(true);
-     ui->SmoothModeEnabled->setDisabled(true);
+    MainWindow::SmoothModeEnabled = true;
+    MainWindow::FuncModeEnabled = false;
+    ui->SmoothModeDisabled->setEnabled(true);
+    ui->SmoothModeEnabled->setDisabled(true);
 }
 
 void MainWindow::on_SmoothModeDisabled_clicked()
@@ -600,8 +605,8 @@ void MainWindow::on_SmoothModeDisabled_clicked()
 void MainWindow::on_FuncModeEnabled_clicked()
 {
     state = func_move;
-    MainWindow::FuncModeEnabled = TRUE;
-    MainWindow::SmoothModeEnabled = FALSE;
+    MainWindow::FuncModeEnabled = true;
+    MainWindow::SmoothModeEnabled = false;
     ui->FuncModeDisabled->setEnabled(true);
     ui->FuncModeEnabled->setDisabled(true);
 
@@ -610,16 +615,16 @@ void MainWindow::on_FuncModeEnabled_clicked()
 void MainWindow::on_FuncModeDisabled_clicked()
 {
     state = disabled;
-     MainWindow::FuncModeEnabled = FALSE;
-     ui->FuncModeEnabled->setEnabled(true);
-     ui->FuncModeDisabled->setDisabled(true);
+    MainWindow::FuncModeEnabled = false;
+    ui->FuncModeEnabled->setEnabled(true);
+    ui->FuncModeDisabled->setDisabled(true);
 
 }
 
 void MainWindow::on_SmoothAutonomousEnabled_clicked()
 {
     state = smooth_move_autonomous;
-    SmoothAutonomousEnabled = TRUE;
+    SmoothAutonomousEnabled = true;
     ui->SmoothAutonomousDisabled->setEnabled(true);
     ui->SmoothAutonomousEnabled->setDisabled(true);
 }
@@ -628,7 +633,7 @@ void MainWindow::on_SmoothAutonomousEnabled_clicked()
 void MainWindow::on_SmoothAutonomousDisabled_clicked()
 {
     state = disabled;
-    SmoothAutonomousEnabled = FALSE;
+    SmoothAutonomousEnabled = false;
     ui->SmoothAutonomousEnabled->setEnabled(true);
     ui->SmoothAutonomousDisabled->setDisabled(true);
 }
@@ -653,7 +658,7 @@ void MainWindow::on_Set_Angular_vel_clicked()
 void MainWindow::on_PathModeEnabled_clicked()
 {
     state = path_mode;
-    PathModeEnabled = TRUE;
+    PathModeEnabled = true;
     ui->PathModeEnabled->setDisabled(true);
     ui->PathModeDisabled->setEnabled(true);
 }
@@ -661,7 +666,7 @@ void MainWindow::on_PathModeEnabled_clicked()
 void MainWindow::on_PathModeDisabled_clicked()
 {
     state = disabled;
-    PathModeEnabled = FALSE;
+    PathModeEnabled = false;
     ui->PathModeEnabled->setEnabled(true);
     ui->PathModeDisabled->setDisabled(true);
 }
@@ -675,30 +680,30 @@ void MainWindow::on_radioButton_SmoothMode_Autonomous_clicked()
     float DataTime;
     float DataDesiredVelocity;
 
-    SmoothStartSignal = FALSE;
-    FuncStartSignal = FALSE;
-    SmoothAutonomousEnabled = TRUE;
-    PathModeEnabled = FALSE;
-    qDebug() << "Autonomous Smooth Start TRUE";
+    SmoothStartSignal = false;
+    FuncStartSignal = false;
+    SmoothAutonomousEnabled = true;
+    PathModeEnabled = false;
+    qDebug() << "Autonomous Smooth Start true";
 
-     StringVar = ui->Write_Desired_Time->toPlainText();
-     DataTime  = StringVar.toFloat();
-     //StringVar = ui->Write_Desired_Velocity->toPlainText();
+    StringVar = ui->Write_Desired_Time->toPlainText();
+    DataTime  = StringVar.toFloat();
+    //StringVar = ui->Write_Desired_Velocity->toPlainText();
 
-     DataDesiredVelocity  = StringVar.toFloat();
-     if (DataDesiredVelocity > 1.2 || DataDesiredVelocity < -1.2)
-     Warner ("Слишком высокая скорость");
-//     else
-//     SendForSmoothMove('g', DataTime, DataDesiredVelocity);
+    DataDesiredVelocity  = StringVar.toFloat();
+    if (DataDesiredVelocity > 1.2 || DataDesiredVelocity < -1.2)
+    Warner ("Слишком высокая скорость");
+    //     else
+    //     SendForSmoothMove('g', DataTime, DataDesiredVelocity);
 }
 
 void MainWindow::on_radioButton_path_mode_Autonomous_clicked()
 {
     state = path_mode;
-    SmoothStartSignal = FALSE;
-    FuncStartSignal = FALSE;
-    SmoothAutonomousEnabled = FALSE;
-    PathModeEnabled = TRUE;
+    SmoothStartSignal = false;
+    FuncStartSignal = false;
+    SmoothAutonomousEnabled = false;
+    PathModeEnabled = true;
 }
 
 void MainWindow::on_radioButton_TrajectoryMode_Autonomous_clicked()
@@ -837,22 +842,22 @@ void MainWindow::SendBytesFloat(char command_code, float data)
     qDebug() << state;
     uint8_t data_to_send[5] = {};
     data_to_send[0] = command_code;           // стартовый бит
-    memcpy(data_to_send+1, &data, 4);
+    memcpy(data_to_send + 1, &data, 4);
     qDebug() << "data_to_send: ";
-    for(int i =0; i<5; i++)
+    for (int i = 0; i < 5; i++)
         qDebug() << i << ":  '" << data_to_send[i] << "'";
     uint8_t data_to_send_encoded[7] = {};
     uint8_t size = encode(data_to_send, 5, data_to_send_encoded);
     qDebug() << "data_to_send_encoded: ";
-    for(int i =0; i<7; i++)
+    for(int i = 0; i < 7; i++)
         qDebug() << i << ":  '" << data_to_send_encoded[i] << "'";
     qDebug() << "end of data_to_send_encoded";
     qDebug() << "size_encoded: " << size;
     qDebug() << " ";
     char data_to_send_encoded_char[7] = {};
     memcpy(data_to_send_encoded_char, data_to_send_encoded, 7);
-    port_test->write(data_to_send_encoded_char, (qint64)size+1);
-    if(port_test->waitForBytesWritten(10) == false)
+    port_test->write(data_to_send_encoded_char, (qint64)size + 1);
+    if (port_test->waitForBytesWritten(10) == false)
         qDebug() << "error sending";
 }
 
@@ -864,7 +869,7 @@ void MainWindow::SendByte(char command_code)
     data_to_send[1] = 0;
     qDebug() << data_to_send;
     port_test->write(data_to_send, 2);
-    if(port_test->waitForBytesWritten(10) == false)
+    if (port_test->waitForBytesWritten(10) == false)
         qDebug() << "error sending";
 }
 
@@ -874,32 +879,33 @@ void MainWindow::SendForSmoothMove(char command_code, float time, float vel)    
     qDebug() << state;
     uint8_t data_to_send[5] = {};
     data_to_send[0] = command_code;           // стартовый бит
-    data_time = 100*time;
-    data_vel = 100*vel;
-    memcpy(data_to_send+1, &data_time, 2);
-    memcpy(data_to_send+3, &data_vel, 2);
+    data_time = 100 * time;
+    data_vel = 100 * vel;
+    memcpy(data_to_send + 1, &data_time, 2);
+    memcpy(data_to_send + 3, &data_vel, 2);
 
     qDebug() << "data_to_send: ";
-    for(int i =0; i<5; i++)
+    for (int i = 0; i < 5; i++)
         qDebug() << i << ":  '" << data_to_send[i] << "'";
     uint8_t data_to_send_encoded[7] = {};
     uint8_t size = encode(data_to_send, 5, data_to_send_encoded);
     qDebug() << "data_to_send_encoded: ";
-    for(int i =0; i<7; i++)
+    for (int i = 0; i < 7; i++)
         qDebug() << i << ":  '" << data_to_send_encoded[i] << "'";
     qDebug() << "end of data_to_send_encoded";
     qDebug() << "size_encoded: " << size;
     qDebug() << " ";
     char data_to_send_encoded_char[7] = {};
     memcpy(data_to_send_encoded_char, data_to_send_encoded, 7);
-    port_test->write(data_to_send_encoded_char, (qint64)size+1);
-    if(port_test->waitForBytesWritten(10) == false)
+    port_test->write(data_to_send_encoded_char, (qint64)size + 1);
+    if (port_test->waitForBytesWritten(10) == false)
         qDebug() << "error sending";
 }
 
 
 size_t encode(const uint8_t *ptr, size_t length, uint8_t *dst)
-{    /*
+{
+    /*
      * StuffData byte stuffs "length" bytes of data
      * at the location pointed to by "ptr", writing
      * the output to the location pointed to by "dst".
@@ -943,22 +949,22 @@ size_t cobs_decode(const uint8_t * input, size_t length, uint8_t * output)
     uint8_t code;
     uint8_t i;
 
-    while(read_index < length)
+    while (read_index < length)
     {
         code = input[read_index];
 
-        if(read_index + code > length && code != 1)
+        if (read_index + code > length && code != 1)
         {
             return 0;
         }
 
         read_index++;
 
-        for(i = 1; i < code; i++)
+        for (i = 1; i < code; i++)
         {
             output[write_index++] = input[read_index++];
         }
-        if(code != 0xFF && read_index != length)
+        if (code != 0xFF && read_index != length)
         {
             output[write_index++] = '\0';
         }
@@ -970,7 +976,8 @@ size_t cobs_decode(const uint8_t * input, size_t length, uint8_t * output)
 void MainWindow::on_pushButtonResetPlot_clicked()
 {
     encoderPosPointsArr->clear();
-    yMin = yMax = d_data_buf;
+    yMin = d_data_buf;
+    yMax = d_data_buf;
 
     ChartTimeCount = 0;
 
@@ -991,13 +998,13 @@ void MainWindow::on_savePlotToFile_clicked()
 
     // comment begin
     QFile file(fileName);
-    if (file.open(QIODevice::WriteOnly
-                  |QIODevice::Truncate
-                  |QIODevice::Text))
+    if (file.open(QIODevice::WriteOnly |
+                  QIODevice::Truncate |
+                  QIODevice::Text))
     {
         // QDataStream out(&file);
         file.write("x;y;\n");
-        for(int i=0; i < series_vec.count(); ++i) {
+        for (int i=0; i < series_vec.count(); ++i) {
             // out << QString::number( series_vec[i] ).toLocal8Bit() << ";";
             QByteArray ba;
             ba = QString::number( i ).toLatin1();
@@ -1011,21 +1018,21 @@ void MainWindow::on_savePlotToFile_clicked()
     } // comment end
 
     // UploadToCsv(encoderPosChart,fileName); // need. original
-    ui->pushButtonResetPlot->setDisabled(FALSE);
+    ui->pushButtonResetPlot->setDisabled(false);
 }
 
 
-bool UploadToCsv(
-        const QChart * chart,
-        const QString filename)
+bool UploadToCsv(const QChart * chart, const QString filename)
 {
     QFile csvfile(filename);
-    if(chart->series().count()==0)
+    if (chart->series().count() == 0)
         return false;
+
     if (!csvfile.open(QIODevice::WriteOnly
                  |QIODevice::Truncate
                  |QIODevice::Text))
         return false;
+
     for (int i = 0; i < chart->series().count(); ++i)
     {
         QLineSeries * ls;
@@ -1034,18 +1041,19 @@ bool UploadToCsv(
                       + QString::number(i).toLatin1()
                       + QByteArray("\n"));
         csvfile.write("x;y;\n");
-        for (int j=0; j < ls->count();++j)
+        for (int j = 0; j < ls->count(); ++j)
         {
             QByteArray ba;
-            ba = QString::number(ls->at(j).x(),'i',0).toLatin1();
+            ba = QString::number(ls->at(j).x(), 'i', 0).toLatin1();
             ba += ";";
-            ba += QString::number(ls->at(j).y(),'f',2).toLatin1();
+            ba += QString::number(ls->at(j).y(), 'f', 2).toLatin1();
             ba += ";\n";
             csvfile.write(ba);
         }
     }
     csvfile.close();
     qDebug() << "Write successfull";
+
     return true;
 }
 
@@ -1054,7 +1062,7 @@ void MainWindow::on_pushButtonStartSaveToFile_clicked()
     // encoderPosPointsArr->clear();
     //flag_show_plot = 0;
     //yMin = yMax = 0;
-    //ui->pushButtonResetPlot->setDisabled(TRUE);
+    //ui->pushButtonResetPlot->setDisabled(true);
     save_to_file_enabled = true;
     series_vec.clear();
     //plot_enabled = false;
@@ -1116,41 +1124,44 @@ void MainWindow::ReceiveSmoothCount(int GetCount)
                       */
     CountTime = GetCount;
     double RollTime = StdRollTime;
-     StringTime = ui->WriteTime->toPlainText();
-     RollTime  = StringTime.toDouble();
+    StringTime = ui->WriteTime->toPlainText();
+    RollTime  = StringTime.toDouble();
 
-     if (counter < 2*AccellTime+RollTime)
-     {
-          if ( counter < AccellTime)
-          {
-               data = 0.1*data*counter;
-               qDebug() << "data_accel" << data;
-              SendBytesFloat(command_code, data);
-              ui->horizontalSlider->setValue((int)(data*10000));
-              qDebug() << "counter" << counter;
-           }
+    if (counter < 2 * AccellTime + RollTime)
+    {
+        if ( counter < AccellTime)
+        {
+            data = 0.1 * data * counter;
+            qDebug() << "data_accel" << data;
+            SendBytesFloat(command_code, data);
+            ui->horizontalSlider->setValue((int)(data*10000));
+            qDebug() << "counter" << counter;
+        }
+        else if ( (counter >= AccellTime)&&(counter<= 2*AccellTime+RollTime - AccellTime) )
+        {
+            qDebug() << endl << "counter" << counter;
 
-           else if ( (counter >= AccellTime)&&(counter<= 2*AccellTime+RollTime - AccellTime) )
-                 {
-                 qDebug() << endl << "counter" << counter;
-
-                 data = ui->spinBox_des_val->value();
-                 SendBytesFloat(command_code, data);
-                  qDebug() << "data_run" << data << endl;
-                    }
-                  else if ( (counter <= 2*AccellTime+RollTime)&&(counter >= 2*AccellTime+RollTime - AccellTime) )
-                  {
-                      data = ui->spinBox_des_val->value();
-                      data = 0.1*data*(2*AccellTime+RollTime-counter);
-                     SendBytesFloat(command_code, data);
-                     ui->horizontalSlider->setValue((int)(data*10000));
-                     qDebug() << "data_stop" << data;
-                     qDebug() << "counter" << counter;
-                  }
-          else {StopNow(data, command_code);}
-            }
-     else {StopNow(data, command_code);}
-     counter++;
+            data = ui->spinBox_des_val->value();
+            SendBytesFloat(command_code, data);
+            qDebug() << "data_run" << data << endl;
+        }
+        else if ( (counter <= 2 * AccellTime+RollTime) && (counter >= 2 * AccellTime + RollTime - AccellTime) )
+        {
+            data = ui->spinBox_des_val->value();
+            data = 0.1 * data * (2 * AccellTime + RollTime - counter);
+            SendBytesFloat(command_code, data);
+            ui->horizontalSlider->setValue((int)(data * 10000));
+            qDebug() << "data_stop" << data;
+            qDebug() << "counter" << counter;
+        }
+        else {
+            StopNow(data, command_code);
+        }
+    }
+    else {
+        StopNow(data, command_code);
+    }
+    counter++;
 }
 
 void MainWindow::ReceiveFuncCount(int GetCount)
@@ -1191,87 +1202,92 @@ void MainWindow::ReceiveFuncCount(int GetCount)
                              ui->WriteFunc_4->toPlainText()};
     // проверки корректности при выполнении, окна не выводятся, для t1=0 -> основная функция выполняется бесконечно, для t2...t8=0 / t(i)>t(i+1) -> некорректны, не выполняются
     // основная функция выполняется в промежутке (t0;t1) в периоде, с перерывами на дополнительные функции
-     for (int j=0; j<9; j++)
-{
-         t[2*j]=StringTime[2*j].toFloat();
-         t[2*j+1]=StringTime[2*j+1].toFloat();
-         qDebug() << "j= " << j << ",t[2j]= " << t[2*j];
+    for (int j = 0; j < 9; j++)
+    {
+        t[2 * j] = StringTime[2 * j].toFloat();
+        t[2 * j + 1] = StringTime[2 * j + 1].toFloat();
+        qDebug() << "j= " << j << ",t[2j]= " << t[2 * j];
 
 
-         if (j!=0 && (t[2*j]==0 || t[2*j+1]==0) )
-         {
-         t[2*j]=0;
-         t[2*j+1]=0;
-         //qDebug() << "Некорректное время " << 2*j;
-         //Warner ("Некорректное время t1");
-         }
-         else if(j!=0 && t[2*j]>=t[2*j+1])
-         {
-             t[2*j]=0;
-             t[2*j+1]=0;
-//             Warner ("Конечное время t1 меньше начального t0");
-             //qDebug() << "Конечное время " << 2*j << " меньше начального " << 2*j-1 ;
-         }
-         else if(j==0 && t[1]==0 )
-         {
-             //t[2*j]=-1;
+        if (j != 0 && (t[2 * j] == 0 || t[2 * j + 1] == 0) )
+        {
+            t[2 * j] = 0;
+            t[2 * j + 1] = 0;
+            //qDebug() << "Некорректное время " << 2*j;
+            //Warner ("Некорректное время t1");
+        }
+        else if (j != 0 && t[2 * j] >= t[2 * j + 1])
+        {
+            t[2 * j] = 0;
+            t[2 * j + 1] = 0;
+            //             Warner ("Конечное время t1 меньше начального t0");
+            //qDebug() << "Конечное время " << 2*j << " меньше начального " << 2*j-1 ;
+        }
+        else if (j == 0 && t[1] == 0 )
+        {
+            //t[2*j]=-1;
             // t[2*j+1]=-1;
             // qDebug() << "t1 бесконечно";
-         }
-         else if(j==0 && t[1]<=t[0] && t[1]!=0 )
-         {
-             t[2*j]=0;
-             t[2*j+1]=0;
-             //qDebug() << "Конечное время t1 меньше начального t0";
-         }
+        }
+        else if (j == 0 && t[1] <= t[0] && t[1] != 0 )
+        {
+            t[2 * j] = 0;
+            t[2 * j + 1] = 0;
+            //qDebug() << "Конечное время t1 меньше начального t0";
+        }
+        if (j != 0 && t[2 * j] != 0 && t[2 * j + 1] != 0 && counter >= t[2 * j] && counter <= t[2 * j + 1]) {
+            std::string d = StringFunc[j].toStdString();
 
-             if (j!=0 && t[2*j]!=0 && t[2*j+1]!=0 && counter>=t[2*j] && counter<=t[2*j+1]) {
-                 std::string d = StringFunc[j].toStdString();
+            p = d.data();
+            //qDebug() << "string" << p;
+            Parser parser(p);    //Подключает разборщик ввода
+            // auto result = eval(parser.parse());
+            double data = Calculator(p, counter);  // Разбирает и высчитывает результат ввода
+            SendBytesFloat(command_code, data);
+            ui->horizontalSlider->setValue((int)(data * 10000));
+            qDebug() << "data" << data;
+            if (FuncModeEnabled == false) {
+                StopNow(data, command_code);
+            }
+            break;
+        }
+        else if (j == 8 && t[1] == 0 ) {
+            std::string d = StringFunc[0].toStdString();
+            p = d.data();
+            // qDebug() << "string" << p;
+            Parser parser(p);    //Подключает разборщик ввода
+            // auto result = eval(parser.parse());
+            double data = Calculator(p, counter);  // Разбирает и высчитывает результат ввода
+            SendBytesFloat(command_code, data);
+            ui->horizontalSlider->setValue((int)(data * 10000));
+            qDebug() << "data" << data;
+            if (FuncModeEnabled==false) {
+                StopNow(data, command_code);
+            }
+            break;
+        }
 
-                p=d.data();
-                //qDebug() << "string" << p;
-                Parser parser(p);    //Подключает разборщик ввода
-               // auto result = eval(parser.parse());
-                double data = Calculator(p, counter);  // Разбирает и высчитывает результат ввода
-                SendBytesFloat(command_code, data);
-                ui->horizontalSlider->setValue((int)(data*10000));
-                qDebug() << "data" << data;
-                if (FuncModeEnabled==FALSE) {StopNow(data, command_code);}
-                break;
-             }
-             else if (j==8 && t[1]==0 ) {
-                 std::string d = StringFunc[0].toStdString();
-                p=d.data();
-               // qDebug() << "string" << p;
-                Parser parser(p);    //Подключает разборщик ввода
-               // auto result = eval(parser.parse());
-                double data = Calculator(p, counter);  // Разбирает и высчитывает результат ввода
-                SendBytesFloat(command_code, data);
-                ui->horizontalSlider->setValue((int)(data*10000));
-                qDebug() << "data" << data;
-                if (FuncModeEnabled==FALSE) {StopNow(data, command_code);}
-                break;
-             }
+        else if (j == 8 && t[1] != 0 && counter >= t[0] && counter <= t[1]) {
+            std::string d = StringFunc[0].toStdString();
+            p = d.data();
+            //  qDebug() << "string" << p;
+            Parser parser(p);    //Подключает разборщик ввода
+            // auto result = eval(parser.parse());
+            double data = Calculator(p, counter);  // Разбирает и высчитывает результат ввода
+            SendBytesFloat(command_code, data);
+            ui->horizontalSlider->setValue((int)(data * 10000));
+            qDebug() << "data" << data;
+            if (FuncModeEnabled == false) {
+                StopNow(data, command_code);
+            }
+            break;
+        }
 
-             else if (j==8 && t[1]!=0 && counter>=t[0] && counter<=t[1]) {
-                 std::string d = StringFunc[0].toStdString();
-                p=d.data();
-              //  qDebug() << "string" << p;
-                Parser parser(p);    //Подключает разборщик ввода
-               // auto result = eval(parser.parse());
-                double data = Calculator(p, counter);  // Разбирает и высчитывает результат ввода
-                SendBytesFloat(command_code, data);
-                ui->horizontalSlider->setValue((int)(data*10000));
-                qDebug() << "data" << data;
-                if (FuncModeEnabled==FALSE) {StopNow(data, command_code);}
-                break;
-             }
+        else if (j == 8 && t[1] != 0 && counter >= t[0] && counter >= t[1])
+            counter = -1;
+    }
 
-              else if (j==8 && t[1]!=0 && counter>=t[0] && counter>=t[1])
-                 counter=-1;
-         }
-
-counter++;
+    counter++;
 
 }
 
@@ -1286,11 +1302,11 @@ void MainWindow::Warner(QString s)
 void MainWindow::StopNow(float f_data, char f_command_code)
 {
     f_data = 0;
-    counter=-1;
+    counter = -1;
     SendBytesFloat('a', 0);
-    SmoothStartSignal=false;
+    SmoothStartSignal = false;
     emit EmitSmoothStartSignal(SmoothStartSignal);
-    FuncStartSignal=false;
+    FuncStartSignal = false;
     emit EmitFuncStartSignal(FuncStartSignal);
     SmoothAutonomousEnabled = false;
     SmoothAutonomousStartSignal = false;
@@ -1298,14 +1314,15 @@ void MainWindow::StopNow(float f_data, char f_command_code)
 
 void MainWindow::GetCounter(int counter)
 {
-    //
-    ChartTimeCount+=0.1;
+    ChartTimeCount += 0.1;
     //port_test->readyRead();
-   // qDebug() << "GetCounter";
-    //if ( DataReady == TRUE ){
-      //  qDebug() << "ready";
+    // qDebug() << "GetCounter";
+    //if ( DataReady == true ){
+    //  qDebug() << "ready";
+
     serialDataReceived();
-//}
+
+    //}
     //return *ui;
 }
 
@@ -1313,7 +1330,7 @@ void MainWindow::serialDataReady()
 {
 
     //qDebug() << "GetReady";
-    //DataReady = TRUE;
+    //DataReady = true;
 
     //return *ui;
 }

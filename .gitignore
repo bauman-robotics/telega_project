@@ -1,0 +1,7 @@
+debug/*
+release/*
+*.o
+moc_*
+build-*/*
+*.pro.user
+
