@@ -7,13 +7,10 @@ include_directories(.)
 
 add_executable(joystick
         360_controller_map.h
-        cmake_install.cmake
-        CMakeLists.txt
         cobs.c
         cobs.h
         easy_serial.h
         joystick.h
-        Makefile
         odroid_test_analog.c
         robot_defines.h
         sensors.h)
