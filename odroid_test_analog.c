@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <limits.h>
 #include <string.h>
 #include "joystick.h"
@@ -7,8 +8,34 @@
 #include "360_controller_map.h"
 #include "sensors.h"
 #include "cobs.h"
+#include <sys/time.h>
+#include <time.h>
 
 int enable_writing = 0;
+
+void time_now(long *sec, long *usec)
+{
+    struct timeval  tv;
+    gettimeofday(&tv, NULL);
+
+    (*usec) = tv.tv_usec;
+    (*sec) = tv.tv_sec;
+
+}
+
+void u_sleep(long usec)
+{
+    long sec = usec / 1000000;
+    long nsec = (usec - sec) * 1000;
+    struct timespec tw = {sec, nsec};
+    nanosleep(&tw, NULL);
+}
+
+void clear_way()
+{
+    FILE * way_file = fopen("way", "w");
+    fclose(way_file);
+}
 
 long map(long x, long in_min, long in_max, long out_min, long out_max)
 {
@@ -83,7 +110,7 @@ int  send_axis_updates(int *old_axis_array, int *new_axis_array, int send_port)
         if(enable_writing == 1)
         {
             FILE * way_file = fopen("way", "a");
-            fprintf(way_file,"%f*%f\n", axis1, axis2);
+            fprintf(way_file,"%f %f\n", axis1, axis2);
             fclose(way_file);
         }
             printf("linear speed: %f, angular speed: %f\n", axis1, axis2);
@@ -102,6 +129,42 @@ int send_command(unsigned char *flag, unsigned char *value, int send_port)
 //	while(received != ARDUINO_RECEIVED_BYTE);
 //		read(receive_port, &received, 1);
 	return 0;
+}
+
+void go_from_way(int send_port)
+{
+    FILE * way_file = fopen("way", "r");
+    if(way_file == NULL)
+    {
+        printf("Can't read file.\n");
+    }
+    else
+    {
+        char line1[10];
+        char line2[10];
+
+        if(fscanf(way_file, "%s %s", line1, line2) == EOF)
+        {
+            printf("File is Empty.\n");
+        }
+        else
+        {
+            float axis1 = atof(line1);
+            float axis2 = atof(line2);
+            //printf("%s, %s\n", line1, line2);
+            send_command_cobs(axis1, axis2, send_port);
+
+            while (fscanf(way_file, "%s %s", line1, line2) != EOF)
+            {
+                axis1 = atof(line1);
+                axis2 = atof(line2);
+                //printf("%s, %s\n", line1, line2);
+                send_command_cobs(axis1, axis2, send_port);
+            }
+        }
+
+        fclose(way_file);
+    }
 }
 
 
@@ -132,8 +195,9 @@ int update_button(int button, int button_state, int send_port, int receive_port)
 			if(button_state == 1)
 			{
 				value = 255;
-				printf("Driving right motor.\n");
-				send_command(&flag, &value, send_port);//do left bumper pressed thing
+				printf("Clear Way File.\n");
+				clear_way();
+				//send_command(&flag, &value, send_port);//do left bumper pressed thing
 			}
 			if(button_state == 0)
 			{
@@ -141,29 +205,12 @@ int update_button(int button, int button_state, int send_port, int receive_port)
 				send_command(&flag, &value, send_port);		
 			}
 			break;
-		case BUTTON_A:
-			flag = SERVO_CLAW_RAISE_TAG;
-			if(button_state == 1)
-			{
-                value = 0;
-                printf("START WRITING\n");
-                enable_writing = 1;
-                //send_command(&flag, &value, send_port);//do A button pressed thing
-            }
-			break;
-		case BUTTON_Y:
+		case BUTTON_Y: // Это кнопка Y
             flag = SERVO_CLAW_RAISE_TAG;
             if(button_state == 1)
             {
                 value = 255;
                 printf("Raising claw.\n");
-                if(enable_writing == 0)
-                {
-                    char data;
-                    FILE * way_file = fopen("way", "r");
-                    fscanf(way_file, "%s", &data);
-                    fclose(way_file);
-                }
                 //send_command(&flag, &value, send_port);//do Y button pressed thing
                 //send_command_cobs(1.0f, 0.0f, send_port);
             }
@@ -173,16 +220,28 @@ int update_button(int button, int button_state, int send_port, int receive_port)
                 //send_command_cobs(0.0f, 0.0f, send_port);
             }
 			break;
-		case BUTTON_X:
+		case BUTTON_X: // Это кнопка B
             flag = SERVO_CLAW_CLOSE_TAG;
             if(button_state == 1)
             {
                 value = 255;
-                printf("Closing claw.\n");
-                send_command(&flag, &value, send_port);//do A button pressed thing
+                printf("Go From Way File\n");
+                go_from_way(send_port);
+                //send_command(&flag, &value, send_port);//do A button pressed thing
             }
 			break;
-        case BUTTON_B:
+        case BUTTON_A:  // Это кнопка X
+            flag = SERVO_CLAW_RAISE_TAG;
+            if(button_state == 1)
+            {
+                value = 0;
+                printf("START WRITING\n");
+                enable_writing = 1;
+
+                //send_command(&flag, &value, send_port);//do A button pressed thing
+            }
+            break;
+        case BUTTON_B:  // Это кнопка A
             flag = SERVO_CLAW_CLOSE_TAG;
             if(button_state == 1)
             {
