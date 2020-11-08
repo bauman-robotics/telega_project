@@ -12,14 +12,15 @@
 #include <time.h>
 
 int enable_writing = 0;
+long time_point = 0, d_time = 0;
 
-void time_now(long *sec, long *usec)
+long u_time_now()
 {
     struct timeval  tv;
     gettimeofday(&tv, NULL);
 
-    (*usec) = tv.tv_usec;
-    (*sec) = tv.tv_sec;
+    long now = tv.tv_usec + (tv.tv_sec * 1000000);
+    return now;
 
 }
 
@@ -35,6 +36,8 @@ void clear_way()
 {
     FILE * way_file = fopen("way", "w");
     fclose(way_file);
+    time_point = 0;
+    d_time = 0;
 }
 
 long map(long x, long in_min, long in_max, long out_min, long out_max)
@@ -107,12 +110,24 @@ int  send_axis_updates(int *old_axis_array, int *new_axis_array, int send_port)
                 axis1 = 0.0f;
             if(axis2 < DEADZONE && axis2 > -DEADZONE)
                 axis2 = 0.0f;
-        if(enable_writing == 1)
-        {
-            FILE * way_file = fopen("way", "a");
-            fprintf(way_file,"%f %f\n", axis1, axis2);
-            fclose(way_file);
-        }
+
+            if(enable_writing == 1)
+            {
+                if (time_point == 0)
+                {
+                    time_point = u_time_now();
+                }
+                else
+                {
+                    d_time = u_time_now() - time_point;
+                    time_point = u_time_now();
+                }
+
+                FILE * way_file = fopen("way", "a");
+                fprintf(way_file,"%f %f %ld\n", axis1, axis2, d_time);
+                fclose(way_file);
+            }
+
             printf("linear speed: %f, angular speed: %f\n", axis1, axis2);
             send_command_cobs(axis1, axis2, send_port);
         }
@@ -140,25 +155,28 @@ void go_from_way(int send_port)
     }
     else
     {
-        char line1[10];
-        char line2[10];
+        char ax1[10];
+        char ax2[10];
+        char tm[10];
 
-        if(fscanf(way_file, "%s %s", line1, line2) == EOF)
+        if(fscanf(way_file, "%s %s %s", ax1, ax2, tm) == EOF)
         {
             printf("File is Empty.\n");
         }
         else
         {
-            float axis1 = atof(line1);
-            float axis2 = atof(line2);
-            //printf("%s, %s\n", line1, line2);
+            float axis1 = atof(ax1);
+            float axis2 = atof(ax2);
+            //printf("%s, %s\n", ax1, ax2);
             send_command_cobs(axis1, axis2, send_port);
 
-            while (fscanf(way_file, "%s %s", line1, line2) != EOF)
+            while (fscanf(way_file, "%s %s %s", ax1, ax2, tm) != EOF)
             {
-                axis1 = atof(line1);
-                axis2 = atof(line2);
-                //printf("%s, %s\n", line1, line2);
+                axis1 = atof(ax1);
+                axis2 = atof(ax2);
+                long time = (long)tm;
+                //printf("%s, %s\n", ax1, ax2);
+                u_sleep(time);
                 send_command_cobs(axis1, axis2, send_port);
             }
         }
