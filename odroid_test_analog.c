@@ -61,17 +61,7 @@ void axis_update(struct js_event *jse, int *axis_update_array)
 	axis_update_array[jse->number] = jse->value;
 }
 
-int  send_button_updates(int *old_button_array, int *new_button_array, int send_port, int receive_port)
-{
-	int i = 0;
-	for(i = 0; i < BUTTON_COUNT; i++)
-		if(new_button_array[i] != old_button_array[i])
-		{
-			update_button(i, new_button_array[i], send_port, receive_port);
-			old_button_array[i] = new_button_array[i];
-		}
-	return 0;
-}
+
 
 int send_command_cobs(float value1, float value2, int send_port)
 {
@@ -184,7 +174,6 @@ void go_from_way(int send_port)
         fclose(way_file);
     }
 }
-
 
 int update_button(int button, int button_state, int send_port, int receive_port)
 {
@@ -308,6 +297,18 @@ int update_button(int button, int button_state, int send_port, int receive_port)
     //printf("\33[2K"); //clear the line
     fflush(stdout); //flush the buffer
 	return 0;
+}
+
+int  send_button_updates(int *old_button_array, int *new_button_array, int send_port, int receive_port)
+{
+    int i = 0;
+    for(i = 0; i < BUTTON_COUNT; i++)
+        if(new_button_array[i] != old_button_array[i])
+        {
+            update_button(i, new_button_array[i], send_port, receive_port);
+            old_button_array[i] = new_button_array[i];
+        }
+    return 0;
 }
 		
 int update_axis(int axis, int axis_value, int send_port)
