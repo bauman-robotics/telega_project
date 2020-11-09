@@ -105,6 +105,7 @@ int  send_axis_updates(int *old_axis_array, int *new_axis_array, int send_port)
             {
                 if (time_point == 0)
                 {
+                    d_time = 0;
                     time_point = u_time_now();
                 }
                 else
@@ -114,11 +115,12 @@ int  send_axis_updates(int *old_axis_array, int *new_axis_array, int send_port)
                 }
 
                 FILE * way_file = fopen("way", "a");
+                printf("%f %f %ld\n", axis1, axis2, d_time);
                 fprintf(way_file,"%f %f %ld\n", axis1, axis2, d_time);
                 fclose(way_file);
             }
 
-            printf("linear speed: %f, angular speed: %f\n", axis1, axis2);
+            //printf("linear speed: %f, angular speed: %f\n", axis1, axis2);
             send_command_cobs(axis1, axis2, send_port);
         }
     }
@@ -164,8 +166,8 @@ void go_from_way(int send_port)
             {
                 axis1 = atof(ax1);
                 axis2 = atof(ax2);
-                long time = (long)tm;
-                //printf("%s, %s\n", ax1, ax2);
+                long time = atol(tm);
+                printf("%f, %f, %ld\n", axis1, axis2, time);
                 u_sleep(time);
                 send_command_cobs(axis1, axis2, send_port);
             }
