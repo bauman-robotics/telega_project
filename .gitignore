@@ -43,3 +43,5 @@ rc_control
 /full_featured_RC.cbp
 /Makefile
 /CMakeFiles/
+*.user
+
