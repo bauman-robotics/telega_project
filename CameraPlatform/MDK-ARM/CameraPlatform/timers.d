@@ -1,0 +1,15 @@
+cameraplatform\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/timers.c
+cameraplatform\timers.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+cameraplatform\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+cameraplatform\timers.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+cameraplatform\timers.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+cameraplatform\timers.o: ../Core/Inc/FreeRTOSConfig.h
+cameraplatform\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+cameraplatform\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+cameraplatform\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+cameraplatform\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h
+cameraplatform\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+cameraplatform\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+cameraplatform\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
+cameraplatform\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
+cameraplatform\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h

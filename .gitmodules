@@ -1,3 +1,0 @@
-[submodule "joystick"]
-	path = joystick
-	url = https://github.com/bauman-robotics/joystick.git

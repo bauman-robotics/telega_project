@@ -1,0 +1,1374 @@
+Dependencies for Project 'CameraPlatform', Target 'CameraPlatform': (DO NOT MODIFY !)
+CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARMCC
+F (startup_stm32h743xx.s)(0x5FAE89BF)(--cpu Cortex-M7.fp.dp -g --apcs=interwork -I ..\Core\Inc-I.\RTE\_CameraPlatform-ID:\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32H7xx_DFP\2.6.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include--pd "__UVISION_VERSION SETA 532" --pd "_RTE_ SETA 1" --pd "STM32H743xx SETA 1" --pd "_RTE_ SETA 1"--list startup_stm32h743xx.lst --xref -o cameraplatform\startup_stm32h743xx.o --depend cameraplatform\startup_stm32h743xx.d)
+F (..\Core\Src\communication.c)(0x5FAE836B)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_CameraPlatform-ID:\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32H7xx_DFP\2.6.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="532" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H743xx-o cameraplatform\communication.o --omf_browse cameraplatform\communication.crf --depend cameraplatform\communication.d)
+I (../Core/Inc/communication.h)(0x5FAE836B)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x5F92C036)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x5FAE89BC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x5F92C036)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h743xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Include/core_cm7.h)(0x5F92C034)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5F63CDCC)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x5F92C034)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h)(0x5F92C031)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x5F92C036)
+I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5F63CDCC)
+I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x5F63CDCC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h)(0x5F92C036)
+I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5F92C038)
+I (../Core/Inc/FreeRTOSConfig.h)(0x5FAE89BB)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h)(0x5F92C038)
+F (..\Core\Src\DualShock2.c)(0x5FAE783F)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_CameraPlatform-ID:\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32H7xx_DFP\2.6.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="532" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H743xx-o cameraplatform\dualshock2.o --omf_browse cameraplatform\dualshock2.crf --depend cameraplatform\dualshock2.d)
+F (../Core/Src/main.c)(0x5FAE89BC)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_CameraPlatform-ID:\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32H7xx_DFP\2.6.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="532" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H743xx-o cameraplatform\main.o --omf_browse cameraplatform\main.crf --depend cameraplatform\main.d)
+I (../Core/Inc/main.h)(0x5FAE89BC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x5F92C036)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x5FAE89BC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x5F92C036)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h743xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Include/core_cm7.h)(0x5F92C034)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5F63CDCC)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x5F92C034)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h)(0x5F92C031)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x5F92C036)
+I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5F63CDCC)
+I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x5F63CDCC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h)(0x5F92C036)
+I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5F92C038)
+I (../Core/Inc/FreeRTOSConfig.h)(0x5FAE89BB)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h)(0x5F92C038)
+I (../Core/Inc/dma.h)(0x5FAE89BB)
+I (../Core/Inc/spi.h)(0x5FAE89BB)
+I (../Core/Inc/usart.h)(0x5FAE89BB)
+I (../Core/Inc/gpio.h)(0x5FAE89B9)
+F (../Core/Src/gpio.c)(0x5FAE89B9)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_CameraPlatform-ID:\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32H7xx_DFP\2.6.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="532" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H743xx-o cameraplatform\gpio.o --omf_browse cameraplatform\gpio.crf --depend cameraplatform\gpio.d)
+I (../Core/Inc/gpio.h)(0x5FAE89B9)
+I (../Core/Inc/main.h)(0x5FAE89BC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x5F92C036)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x5FAE89BC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x5F92C036)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h743xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Include/core_cm7.h)(0x5F92C034)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5F63CDCC)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x5F92C034)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h)(0x5F92C031)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x5F92C036)
+I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5F63CDCC)
+I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x5F63CDCC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h)(0x5F92C036)
+F (../Core/Src/freertos.c)(0x5FAE9448)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_CameraPlatform-ID:\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32H7xx_DFP\2.6.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="532" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H743xx-o cameraplatform\freertos.o --omf_browse cameraplatform\freertos.crf --depend cameraplatform\freertos.d)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5F92C038)
+I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5F63CDCC)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5F63CDCC)
+I (../Core/Inc/FreeRTOSConfig.h)(0x5FAE89BB)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x5F92C038)
+I (../Core/Inc/main.h)(0x5FAE89BC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x5F92C036)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x5FAE89BC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x5F92C036)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h743xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Include/core_cm7.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x5F92C034)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h)(0x5F92C031)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x5F92C036)
+I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x5F63CDCC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h)(0x5F92C036)
+I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h)(0x5F92C038)
+I (../Core/Inc/communication.h)(0x5FAE836B)
+I (../Core/Inc/spi.h)(0x5FAE89BB)
+I (../Core/Inc/usart.h)(0x5FAE89BB)
+F (../Core/Src/dma.c)(0x5FAE89BB)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_CameraPlatform-ID:\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32H7xx_DFP\2.6.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="532" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H743xx-o cameraplatform\dma.o --omf_browse cameraplatform\dma.crf --depend cameraplatform\dma.d)
+I (../Core/Inc/dma.h)(0x5FAE89BB)
+I (../Core/Inc/main.h)(0x5FAE89BC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x5F92C036)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x5FAE89BC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x5F92C036)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h743xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Include/core_cm7.h)(0x5F92C034)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5F63CDCC)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x5F92C034)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h)(0x5F92C031)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x5F92C036)
+I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5F63CDCC)
+I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x5F63CDCC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h)(0x5F92C036)
+F (../Core/Src/spi.c)(0x5FAE93C8)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_CameraPlatform-ID:\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32H7xx_DFP\2.6.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="532" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H743xx-o cameraplatform\spi.o --omf_browse cameraplatform\spi.crf --depend cameraplatform\spi.d)
+I (../Core/Inc/spi.h)(0x5FAE89BB)
+I (../Core/Inc/main.h)(0x5FAE89BC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x5F92C036)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x5FAE89BC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x5F92C036)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h743xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Include/core_cm7.h)(0x5F92C034)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5F63CDCC)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x5F92C034)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h)(0x5F92C031)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x5F92C036)
+I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5F63CDCC)
+I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x5F63CDCC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h)(0x5F92C036)
+F (../Core/Src/usart.c)(0x5FAE89BB)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_CameraPlatform-ID:\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32H7xx_DFP\2.6.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="532" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H743xx-o cameraplatform\usart.o --omf_browse cameraplatform\usart.crf --depend cameraplatform\usart.d)
+I (../Core/Inc/usart.h)(0x5FAE89BB)
+I (../Core/Inc/main.h)(0x5FAE89BC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x5F92C036)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x5FAE89BC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x5F92C036)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h743xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Include/core_cm7.h)(0x5F92C034)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5F63CDCC)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x5F92C034)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h)(0x5F92C031)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x5F92C036)
+I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5F63CDCC)
+I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x5F63CDCC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h)(0x5F92C036)
+F (../Core/Src/stm32h7xx_it.c)(0x5FAE89BB)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_CameraPlatform-ID:\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32H7xx_DFP\2.6.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="532" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H743xx-o cameraplatform\stm32h7xx_it.o --omf_browse cameraplatform\stm32h7xx_it.crf --depend cameraplatform\stm32h7xx_it.d)
+I (../Core/Inc/main.h)(0x5FAE89BC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x5F92C036)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x5FAE89BC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x5F92C036)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h743xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Include/core_cm7.h)(0x5F92C034)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5F63CDCC)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x5F92C034)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h)(0x5F92C031)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x5F92C036)
+I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5F63CDCC)
+I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x5F63CDCC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h)(0x5F92C036)
+I (../Core/Inc/stm32h7xx_it.h)(0x5FAE89BC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5F92C038)
+I (../Core/Inc/FreeRTOSConfig.h)(0x5FAE89BB)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x5F92C038)
+F (../Core/Src/stm32h7xx_hal_msp.c)(0x5FAE89BC)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_CameraPlatform-ID:\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32H7xx_DFP\2.6.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="532" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H743xx-o cameraplatform\stm32h7xx_hal_msp.o --omf_browse cameraplatform\stm32h7xx_hal_msp.crf --depend cameraplatform\stm32h7xx_hal_msp.d)
+I (../Core/Inc/main.h)(0x5FAE89BC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x5F92C036)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x5FAE89BC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x5F92C036)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h743xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Include/core_cm7.h)(0x5F92C034)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5F63CDCC)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x5F92C034)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h)(0x5F92C031)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x5F92C036)
+I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5F63CDCC)
+I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x5F63CDCC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h)(0x5F92C036)
+F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_cortex.c)(0x5F92C036)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_CameraPlatform-ID:\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32H7xx_DFP\2.6.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="532" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H743xx-o cameraplatform\stm32h7xx_hal_cortex.o --omf_browse cameraplatform\stm32h7xx_hal_cortex.crf --depend cameraplatform\stm32h7xx_hal_cortex.d)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x5F92C036)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x5FAE89BC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x5F92C036)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h743xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Include/core_cm7.h)(0x5F92C034)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5F63CDCC)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x5F92C034)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h)(0x5F92C031)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x5F92C036)
+I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5F63CDCC)
+I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x5F63CDCC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h)(0x5F92C036)
+F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc.c)(0x5F92C036)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_CameraPlatform-ID:\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32H7xx_DFP\2.6.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="532" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H743xx-o cameraplatform\stm32h7xx_hal_rcc.o --omf_browse cameraplatform\stm32h7xx_hal_rcc.crf --depend cameraplatform\stm32h7xx_hal_rcc.d)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x5F92C036)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x5FAE89BC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x5F92C036)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h743xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Include/core_cm7.h)(0x5F92C034)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5F63CDCC)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x5F92C034)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h)(0x5F92C031)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x5F92C036)
+I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5F63CDCC)
+I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x5F63CDCC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h)(0x5F92C036)
+F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc_ex.c)(0x5F92C036)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_CameraPlatform-ID:\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32H7xx_DFP\2.6.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="532" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H743xx-o cameraplatform\stm32h7xx_hal_rcc_ex.o --omf_browse cameraplatform\stm32h7xx_hal_rcc_ex.crf --depend cameraplatform\stm32h7xx_hal_rcc_ex.d)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x5F92C036)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x5FAE89BC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x5F92C036)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h743xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Include/core_cm7.h)(0x5F92C034)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5F63CDCC)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x5F92C034)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h)(0x5F92C031)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x5F92C036)
+I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5F63CDCC)
+I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x5F63CDCC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h)(0x5F92C036)
+F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_flash.c)(0x5F92C036)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_CameraPlatform-ID:\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32H7xx_DFP\2.6.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="532" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H743xx-o cameraplatform\stm32h7xx_hal_flash.o --omf_browse cameraplatform\stm32h7xx_hal_flash.crf --depend cameraplatform\stm32h7xx_hal_flash.d)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x5F92C036)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x5FAE89BC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x5F92C036)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h743xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Include/core_cm7.h)(0x5F92C034)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5F63CDCC)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x5F92C034)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h)(0x5F92C031)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x5F92C036)
+I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5F63CDCC)
+I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x5F63CDCC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h)(0x5F92C036)
+F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_flash_ex.c)(0x5F92C036)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_CameraPlatform-ID:\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32H7xx_DFP\2.6.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="532" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H743xx-o cameraplatform\stm32h7xx_hal_flash_ex.o --omf_browse cameraplatform\stm32h7xx_hal_flash_ex.crf --depend cameraplatform\stm32h7xx_hal_flash_ex.d)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x5F92C036)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x5FAE89BC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x5F92C036)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h743xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Include/core_cm7.h)(0x5F92C034)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5F63CDCC)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x5F92C034)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h)(0x5F92C031)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x5F92C036)
+I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5F63CDCC)
+I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x5F63CDCC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h)(0x5F92C036)
+F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_gpio.c)(0x5F92C036)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_CameraPlatform-ID:\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32H7xx_DFP\2.6.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="532" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H743xx-o cameraplatform\stm32h7xx_hal_gpio.o --omf_browse cameraplatform\stm32h7xx_hal_gpio.crf --depend cameraplatform\stm32h7xx_hal_gpio.d)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x5F92C036)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x5FAE89BC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x5F92C036)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h743xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Include/core_cm7.h)(0x5F92C034)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5F63CDCC)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x5F92C034)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h)(0x5F92C031)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x5F92C036)
+I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5F63CDCC)
+I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x5F63CDCC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h)(0x5F92C036)
+F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_hsem.c)(0x5F92C036)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_CameraPlatform-ID:\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32H7xx_DFP\2.6.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="532" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H743xx-o cameraplatform\stm32h7xx_hal_hsem.o --omf_browse cameraplatform\stm32h7xx_hal_hsem.crf --depend cameraplatform\stm32h7xx_hal_hsem.d)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x5F92C036)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x5FAE89BC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x5F92C036)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h743xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Include/core_cm7.h)(0x5F92C034)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5F63CDCC)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x5F92C034)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h)(0x5F92C031)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x5F92C036)
+I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5F63CDCC)
+I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x5F63CDCC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h)(0x5F92C036)
+F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.c)(0x5F92C036)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_CameraPlatform-ID:\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32H7xx_DFP\2.6.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="532" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H743xx-o cameraplatform\stm32h7xx_hal_dma.o --omf_browse cameraplatform\stm32h7xx_hal_dma.crf --depend cameraplatform\stm32h7xx_hal_dma.d)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x5F92C036)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x5FAE89BC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x5F92C036)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h743xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Include/core_cm7.h)(0x5F92C034)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5F63CDCC)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x5F92C034)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h)(0x5F92C031)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x5F92C036)
+I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5F63CDCC)
+I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x5F63CDCC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h)(0x5F92C036)
+F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma_ex.c)(0x5F92C036)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_CameraPlatform-ID:\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32H7xx_DFP\2.6.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="532" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H743xx-o cameraplatform\stm32h7xx_hal_dma_ex.o --omf_browse cameraplatform\stm32h7xx_hal_dma_ex.crf --depend cameraplatform\stm32h7xx_hal_dma_ex.d)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x5F92C036)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x5FAE89BC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x5F92C036)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h743xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Include/core_cm7.h)(0x5F92C034)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5F63CDCC)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x5F92C034)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h)(0x5F92C031)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x5F92C036)
+I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5F63CDCC)
+I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x5F63CDCC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h)(0x5F92C036)
+F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_mdma.c)(0x5F92C036)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_CameraPlatform-ID:\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32H7xx_DFP\2.6.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="532" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H743xx-o cameraplatform\stm32h7xx_hal_mdma.o --omf_browse cameraplatform\stm32h7xx_hal_mdma.crf --depend cameraplatform\stm32h7xx_hal_mdma.d)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x5F92C036)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x5FAE89BC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x5F92C036)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h743xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Include/core_cm7.h)(0x5F92C034)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5F63CDCC)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x5F92C034)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h)(0x5F92C031)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x5F92C036)
+I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5F63CDCC)
+I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x5F63CDCC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h)(0x5F92C036)
+F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr.c)(0x5F92C036)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_CameraPlatform-ID:\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32H7xx_DFP\2.6.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="532" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H743xx-o cameraplatform\stm32h7xx_hal_pwr.o --omf_browse cameraplatform\stm32h7xx_hal_pwr.crf --depend cameraplatform\stm32h7xx_hal_pwr.d)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x5F92C036)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x5FAE89BC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x5F92C036)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h743xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Include/core_cm7.h)(0x5F92C034)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5F63CDCC)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x5F92C034)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h)(0x5F92C031)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x5F92C036)
+I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5F63CDCC)
+I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x5F63CDCC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h)(0x5F92C036)
+F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr_ex.c)(0x5F92C036)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_CameraPlatform-ID:\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32H7xx_DFP\2.6.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="532" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H743xx-o cameraplatform\stm32h7xx_hal_pwr_ex.o --omf_browse cameraplatform\stm32h7xx_hal_pwr_ex.crf --depend cameraplatform\stm32h7xx_hal_pwr_ex.d)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x5F92C036)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x5FAE89BC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x5F92C036)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h743xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Include/core_cm7.h)(0x5F92C034)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5F63CDCC)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x5F92C034)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h)(0x5F92C031)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x5F92C036)
+I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5F63CDCC)
+I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x5F63CDCC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h)(0x5F92C036)
+F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal.c)(0x5F92C036)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_CameraPlatform-ID:\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32H7xx_DFP\2.6.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="532" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H743xx-o cameraplatform\stm32h7xx_hal.o --omf_browse cameraplatform\stm32h7xx_hal.crf --depend cameraplatform\stm32h7xx_hal.d)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x5F92C036)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x5FAE89BC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x5F92C036)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h743xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Include/core_cm7.h)(0x5F92C034)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5F63CDCC)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x5F92C034)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h)(0x5F92C031)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x5F92C036)
+I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5F63CDCC)
+I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x5F63CDCC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h)(0x5F92C036)
+F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c.c)(0x5F92C036)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_CameraPlatform-ID:\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32H7xx_DFP\2.6.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="532" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H743xx-o cameraplatform\stm32h7xx_hal_i2c.o --omf_browse cameraplatform\stm32h7xx_hal_i2c.crf --depend cameraplatform\stm32h7xx_hal_i2c.d)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x5F92C036)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x5FAE89BC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x5F92C036)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h743xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Include/core_cm7.h)(0x5F92C034)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5F63CDCC)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x5F92C034)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h)(0x5F92C031)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x5F92C036)
+I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5F63CDCC)
+I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x5F63CDCC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h)(0x5F92C036)
+F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c_ex.c)(0x5F92C036)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_CameraPlatform-ID:\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32H7xx_DFP\2.6.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="532" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H743xx-o cameraplatform\stm32h7xx_hal_i2c_ex.o --omf_browse cameraplatform\stm32h7xx_hal_i2c_ex.crf --depend cameraplatform\stm32h7xx_hal_i2c_ex.d)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x5F92C036)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x5FAE89BC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x5F92C036)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h743xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Include/core_cm7.h)(0x5F92C034)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5F63CDCC)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x5F92C034)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h)(0x5F92C031)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x5F92C036)
+I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5F63CDCC)
+I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x5F63CDCC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h)(0x5F92C036)
+F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_exti.c)(0x5F92C036)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_CameraPlatform-ID:\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32H7xx_DFP\2.6.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="532" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H743xx-o cameraplatform\stm32h7xx_hal_exti.o --omf_browse cameraplatform\stm32h7xx_hal_exti.crf --depend cameraplatform\stm32h7xx_hal_exti.d)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x5F92C036)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x5FAE89BC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x5F92C036)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h743xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Include/core_cm7.h)(0x5F92C034)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5F63CDCC)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x5F92C034)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h)(0x5F92C031)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x5F92C036)
+I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5F63CDCC)
+I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x5F63CDCC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h)(0x5F92C036)
+F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_spi.c)(0x5F92C036)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_CameraPlatform-ID:\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32H7xx_DFP\2.6.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="532" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H743xx-o cameraplatform\stm32h7xx_hal_spi.o --omf_browse cameraplatform\stm32h7xx_hal_spi.crf --depend cameraplatform\stm32h7xx_hal_spi.d)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x5F92C036)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x5FAE89BC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x5F92C036)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h743xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Include/core_cm7.h)(0x5F92C034)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5F63CDCC)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x5F92C034)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h)(0x5F92C031)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x5F92C036)
+I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5F63CDCC)
+I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x5F63CDCC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h)(0x5F92C036)
+F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_spi_ex.c)(0x5F92C036)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_CameraPlatform-ID:\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32H7xx_DFP\2.6.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="532" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H743xx-o cameraplatform\stm32h7xx_hal_spi_ex.o --omf_browse cameraplatform\stm32h7xx_hal_spi_ex.crf --depend cameraplatform\stm32h7xx_hal_spi_ex.d)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x5F92C036)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x5FAE89BC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x5F92C036)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h743xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Include/core_cm7.h)(0x5F92C034)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5F63CDCC)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x5F92C034)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h)(0x5F92C031)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x5F92C036)
+I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5F63CDCC)
+I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x5F63CDCC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h)(0x5F92C036)
+F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.c)(0x5F92C036)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_CameraPlatform-ID:\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32H7xx_DFP\2.6.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="532" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H743xx-o cameraplatform\stm32h7xx_hal_tim.o --omf_browse cameraplatform\stm32h7xx_hal_tim.crf --depend cameraplatform\stm32h7xx_hal_tim.d)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x5F92C036)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x5FAE89BC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x5F92C036)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h743xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Include/core_cm7.h)(0x5F92C034)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5F63CDCC)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x5F92C034)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h)(0x5F92C031)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x5F92C036)
+I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5F63CDCC)
+I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x5F63CDCC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h)(0x5F92C036)
+F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim_ex.c)(0x5F92C036)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_CameraPlatform-ID:\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32H7xx_DFP\2.6.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="532" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H743xx-o cameraplatform\stm32h7xx_hal_tim_ex.o --omf_browse cameraplatform\stm32h7xx_hal_tim_ex.crf --depend cameraplatform\stm32h7xx_hal_tim_ex.d)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x5F92C036)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x5FAE89BC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x5F92C036)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h743xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Include/core_cm7.h)(0x5F92C034)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5F63CDCC)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x5F92C034)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h)(0x5F92C031)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x5F92C036)
+I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5F63CDCC)
+I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x5F63CDCC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h)(0x5F92C036)
+F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.c)(0x5F92C036)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_CameraPlatform-ID:\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32H7xx_DFP\2.6.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="532" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H743xx-o cameraplatform\stm32h7xx_hal_uart.o --omf_browse cameraplatform\stm32h7xx_hal_uart.crf --depend cameraplatform\stm32h7xx_hal_uart.d)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x5F92C036)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x5FAE89BC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x5F92C036)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h743xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Include/core_cm7.h)(0x5F92C034)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5F63CDCC)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x5F92C034)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h)(0x5F92C031)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x5F92C036)
+I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5F63CDCC)
+I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x5F63CDCC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h)(0x5F92C036)
+F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart_ex.c)(0x5F92C036)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_CameraPlatform-ID:\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32H7xx_DFP\2.6.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="532" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H743xx-o cameraplatform\stm32h7xx_hal_uart_ex.o --omf_browse cameraplatform\stm32h7xx_hal_uart_ex.crf --depend cameraplatform\stm32h7xx_hal_uart_ex.d)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x5F92C036)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x5FAE89BC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x5F92C036)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h743xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Include/core_cm7.h)(0x5F92C034)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5F63CDCC)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x5F92C034)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h)(0x5F92C031)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x5F92C036)
+I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5F63CDCC)
+I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x5F63CDCC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h)(0x5F92C036)
+F (../Core/Src/system_stm32h7xx.c)(0x5F92C031)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_CameraPlatform-ID:\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32H7xx_DFP\2.6.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="532" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H743xx-o cameraplatform\system_stm32h7xx.o --omf_browse cameraplatform\system_stm32h7xx.crf --depend cameraplatform\system_stm32h7xx.d)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h743xx.h)(0x5F92C031)
+I (../Drivers/CMSIS/Include/core_cm7.h)(0x5F92C034)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5F63CDCC)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x5F92C034)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h)(0x5F92C031)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x5F92C036)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x5FAE89BC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x5F92C036)
+I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5F63CDCC)
+I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x5F63CDCC)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h)(0x5F92C036)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h)(0x5F92C036)
+F (../Middlewares/Third_Party/FreeRTOS/Source/croutine.c)(0x5F92C038)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_CameraPlatform-ID:\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32H7xx_DFP\2.6.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="532" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H743xx-o cameraplatform\croutine.o --omf_browse cameraplatform\croutine.crf --depend cameraplatform\croutine.d)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5F92C038)
+I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5F63CDCC)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5F63CDCC)
+I (../Core/Inc/FreeRTOSConfig.h)(0x5FAE89BB)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/croutine.h)(0x5F92C038)
+F (../Middlewares/Third_Party/FreeRTOS/Source/event_groups.c)(0x5F92C038)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_CameraPlatform-ID:\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32H7xx_DFP\2.6.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="532" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H743xx-o cameraplatform\event_groups.o --omf_browse cameraplatform\event_groups.crf --depend cameraplatform\event_groups.d)
+I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5F63CDCC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5F92C038)
+I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5F63CDCC)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5F63CDCC)
+I (../Core/Inc/FreeRTOSConfig.h)(0x5FAE89BB)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x5F92C038)
+F (../Middlewares/Third_Party/FreeRTOS/Source/list.c)(0x5F92C038)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_CameraPlatform-ID:\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32H7xx_DFP\2.6.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="532" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H743xx-o cameraplatform\list.o --omf_browse cameraplatform\list.crf --depend cameraplatform\list.d)
+I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5F63CDCC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5F92C038)
+I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5F63CDCC)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5F63CDCC)
+I (../Core/Inc/FreeRTOSConfig.h)(0x5FAE89BB)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x5F92C038)
+F (../Middlewares/Third_Party/FreeRTOS/Source/queue.c)(0x5F92C038)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_CameraPlatform-ID:\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32H7xx_DFP\2.6.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="532" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H743xx-o cameraplatform\queue.o --omf_browse cameraplatform\queue.crf --depend cameraplatform\queue.d)
+I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5F63CDCC)
+I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x5F63CDDA)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5F92C038)
+I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5F63CDCC)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5F63CDCC)
+I (../Core/Inc/FreeRTOSConfig.h)(0x5FAE89BB)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x5F92C038)
+F (../Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c)(0x5F92C038)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_CameraPlatform-ID:\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32H7xx_DFP\2.6.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="532" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H743xx-o cameraplatform\stream_buffer.o --omf_browse cameraplatform\stream_buffer.crf --depend cameraplatform\stream_buffer.d)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5F63CDCC)
+I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x5F63CDDA)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5F92C038)
+I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5F63CDCC)
+I (../Core/Inc/FreeRTOSConfig.h)(0x5FAE89BB)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/stream_buffer.h)(0x5F92C038)
+F (../Middlewares/Third_Party/FreeRTOS/Source/tasks.c)(0x5F92C038)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_CameraPlatform-ID:\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32H7xx_DFP\2.6.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="532" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H743xx-o cameraplatform\tasks.o --omf_browse cameraplatform\tasks.crf --depend cameraplatform\tasks.d)
+I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5F63CDCC)
+I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x5F63CDDA)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5F92C038)
+I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5F63CDCC)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5F63CDCC)
+I (../Core/Inc/FreeRTOSConfig.h)(0x5FAE89BB)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/stack_macros.h)(0x5F92C038)
+F (../Middlewares/Third_Party/FreeRTOS/Source/timers.c)(0x5F92C038)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_CameraPlatform-ID:\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32H7xx_DFP\2.6.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="532" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H743xx-o cameraplatform\timers.o --omf_browse cameraplatform\timers.crf --depend cameraplatform\timers.d)
+I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5F63CDCC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5F92C038)
+I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5F63CDCC)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5F63CDCC)
+I (../Core/Inc/FreeRTOSConfig.h)(0x5FAE89BB)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x5F92C038)
+F (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c)(0x5F92C038)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_CameraPlatform-ID:\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32H7xx_DFP\2.6.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="532" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H743xx-o cameraplatform\cmsis_os2.o --omf_browse cameraplatform\cmsis_os2.crf --depend cameraplatform\cmsis_os2.d)
+I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x5F63CDDA)
+I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h)(0x5F92C038)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5F63CDCC)
+I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5F63CDCC)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x5F92C034)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5F92C034)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5F92C038)
+I (../Core/Inc/FreeRTOSConfig.h)(0x5FAE89BB)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x5F92C038)
+F (../Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c)(0x5F92C038)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_CameraPlatform-ID:\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32H7xx_DFP\2.6.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="532" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H743xx-o cameraplatform\heap_4.o --omf_browse cameraplatform\heap_4.crf --depend cameraplatform\heap_4.d)
+I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5F63CDCC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5F92C038)
+I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5F63CDCC)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5F63CDCC)
+I (../Core/Inc/FreeRTOSConfig.h)(0x5FAE89BB)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x5F92C038)
+F (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/port.c)(0x5F92C038)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_CameraPlatform-ID:\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32H7xx_DFP\2.6.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="532" -D_RTE_ -DSTM32H743xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H743xx-o cameraplatform\port.o --omf_browse cameraplatform\port.crf --depend cameraplatform\port.d)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5F92C038)
+I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5F63CDCC)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5F63CDCC)
+I (../Core/Inc/FreeRTOSConfig.h)(0x5FAE89BB)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x5F92C038)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x5F92C038)
+F (..\Core\Inc\dma.h)(0x5FAE89BB)()
+F (..\Core\Inc\FreeRTOSConfig.h)(0x5FAE89BB)()
+F (..\Core\Inc\gpio.h)(0x5FAE89B9)()
+F (..\Core\Inc\main.h)(0x5FAE89BC)()
+F (..\Core\Inc\spi.h)(0x5FAE89BB)()
+F (..\Core\Inc\stm32h7xx_hal_conf.h)(0x5FAE89BC)()
+F (..\Core\Inc\stm32h7xx_it.h)(0x5FAE89BC)()
+F (..\Core\Inc\usart.h)(0x5FAE89BB)()
+F (..\Core\Inc\communication.h)(0x5FAE836B)()
+F (..\Core\Inc\DualShock2.h)(0x5FAE8636)()
