@@ -767,7 +767,7 @@ void MainWindow::on_pushButton_2_clicked()
 //запись ПИД-коэффициентов
 void MainWindow::on_write_Kp_clicked()
 {
-    QString raw_string_val = ui->Ki_text->toPlainText();
+    QString raw_string_val = ui->Kp_text->toPlainText();
     float data  = raw_string_val.toFloat();
     char command_code = '1';
     SendBytesFloat(command_code, data);
@@ -783,7 +783,7 @@ void MainWindow::on_write_Ki_clicked()
 
 void MainWindow::on_write_Kd_clicked()
 {
-    QString raw_string_val = ui->Ki_text->toPlainText();
+    QString raw_string_val = ui->Kd_text->toPlainText();
     float data  = raw_string_val.toFloat();
     char command_code = '3';
     SendBytesFloat(command_code, data);
