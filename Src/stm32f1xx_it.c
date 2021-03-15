@@ -53,7 +53,10 @@ extern int uart_drv2_ready;
 
 extern int uart_uplevel_send;
 extern int uart_drv_send;
-
+extern int in_signal;
+extern int flag_in_signal_interrupt;
+extern float speed_drv1;
+extern float privod_position;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -75,7 +78,7 @@ extern UART_HandleTypeDef huart3;
 /* USER CODE END EV */
 
 /******************************************************************************/
-/*           Cortex-M3 Processor Interruption and Exception Handlers          */ 
+/*           Cortex-M3 Processor Interruption and Exception Handlers          */
 /******************************************************************************/
 /**
   * @brief This function handles Non maskable interrupt.
@@ -218,6 +221,33 @@ void SysTick_Handler(void)
 /* For the available peripheral interrupt handler names,                      */
 /* please refer to the startup file (startup_stm32f1xx.s).                    */
 /******************************************************************************/
+
+/**
+  * @brief This function handles EXTI line0 interrupt.
+  */
+void EXTI0_IRQHandler(void)
+{
+  /* USER CODE BEGIN EXTI0_IRQn 0 */
+  if(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0)){ //check pin state 
+    in_signal = 1;
+		speed_drv1 = 0.1;
+		privod_position = 10;
+		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_SET);
+  } else {
+		in_signal = 0;
+		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_RESET);
+		speed_drv1 = -0.1;
+		privod_position = 180;
+	}
+
+	flag_in_signal_interrupt = 1; 
+	
+  /* USER CODE END EXTI0_IRQn 0 */
+  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_0);
+  /* USER CODE BEGIN EXTI0_IRQn 1 */
+
+  /* USER CODE END EXTI0_IRQn 1 */
+}
 
 /**
   * @brief This function handles USART1 global interrupt.
