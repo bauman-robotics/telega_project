@@ -11,7 +11,7 @@
 #define High			0x01
 #define Low				0x00
 #define average		 100
-#define Pole_Pairs 15//12
+#define Pole_Pairs 10 //small ankor = 10// 15 -- normal 6.5//12 = 10 "
 #define Vdc 				12
 #define Pi 3.1415926535897932384
 #define SINE_STEPS 20000
@@ -45,7 +45,13 @@ typedef enum {
 	CALIBRATION,
 	SINE,
 	STATIC, 	
-	SPEED 	    
+	SPEED,
+  SMOOTH_ACCEL,
+	SMOOTH_ACCEL_WITH_NEGATIVE_VELOCITY,
+	SMOOTH_POSITION_CONTROL,
+	GOT_TIME,
+	GOT_LINEAR_VEL,
+	GOT_ROUND_VEL
 } Mode;
 
 void FOC_InitPosition(CQ_average_filter_typedef* filter, Mode MODE);
