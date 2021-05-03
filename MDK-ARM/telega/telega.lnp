@@ -1,9 +1,9 @@
 --cpu Cortex-M3
 "telega\startup_stm32f103xb.o"
+"telega\cobs.o"
 "telega\main.o"
 "telega\stm32f1xx_it.o"
 "telega\stm32f1xx_hal_msp.o"
-"telega\cobs.o"
 "telega\stm32f1xx_hal_gpio_ex.o"
 "telega\stm32f1xx_hal_tim.o"
 "telega\stm32f1xx_hal_tim_ex.o"
