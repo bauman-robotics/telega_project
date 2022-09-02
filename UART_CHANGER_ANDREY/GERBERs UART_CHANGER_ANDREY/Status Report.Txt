@@ -1,0 +1,13 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : Project [UART_CHANGER_ANDREY.PrjPcb]
+   Generated File[UART_CHANGER_ANDREY-Plated.TXT]
+   Generated File[UART_CHANGER_ANDREY-NonPlated.TXT]
+   Generated File[UART_CHANGER_ANDREY.LDP]
+   Generated File[UART_CHANGER_ANDREY.DRR]
+
+
+Files Generated   : 4
+Documents Printed : 0
+
+Finished Output Generation At 18:27:53 On 31.05.2020
